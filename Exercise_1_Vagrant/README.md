@@ -2,7 +2,7 @@
 
 # Exercise 1 - Set up vagrant
 
-Task: Setup Ubuntu 20.04 LTS on your local machine using Vagrant
+### Task: Setup Ubuntu 20.04 LTS on your local machine using Vagrant
 
 Instruction:
 Customize your Vagrantfile as necessary with private_network set to dhcp
@@ -12,15 +12,15 @@ Once the machine is up, run ifconfig and share the output in your submission alo
 
 🚧🚧 Before we proceed please ensure you have a hypervisor compatible with vagrant, an example of such is virtualbox or VMware etc.🚧🚧
 
-Step 1:
+### Step 1:
 
 Go to the offical <a href="https://developer.hashicorp.com/vagrant/downloads?product_intent=vagrant">Vagrant Website</a> and download the installer and download the appropriate binary/installer for your operating system.
 
-step 2:
+### Step 2:
 
 Once the installation is done, to keep things neat and orderly, create a folder and then open a terminal in that folder.. we will keep all our files in 1 location
 
-step 3:
+### Step 3:
 
 In a terminal run the intial vagrant command to generate the files needed for vagrant to run
 
@@ -28,11 +28,11 @@ In a terminal run the intial vagrant command to generate the files needed for va
 vagrant init <os/version>
 ```
 
-step 4:
+### Step 4:
 
 Once the files are generated, you can do further configuration on the vagrant file.
 
-step 5:
+### Step 5:
 
 You can now run the command to spin up a vm using the hypervisor of your choice.
 
@@ -48,7 +48,7 @@ vagrant ssh
 
 NB: Dont forget to change the password
 
-step 6:
+### Step 6:
 
 Run the `ifconfig` command to display some of the networking details of your Vm
 
@@ -58,4 +58,4 @@ ifconfig
 
 With that you have succefully finished setting up vagrant, set up a vm and also seen the network details of your vm.
 
-Enjoy!!!
+### Enjoy!!!
