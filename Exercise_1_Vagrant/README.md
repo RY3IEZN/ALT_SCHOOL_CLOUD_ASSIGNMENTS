@@ -10,7 +10,7 @@ Once the machine is up, run ifconfig and share the output in your submission alo
 
 # Solution
 
-🚧🚧🚧 Before we proceed please ensure you have a hypervisor compatible with vagrant, an example of such is virtualbox or VMware etc.🚧🚧🚧
+🚧🚧 Before we proceed please ensure you have a hypervisor compatible with vagrant, an example of such is virtualbox or VMware etc.🚧🚧
 
 Step 1:
 
