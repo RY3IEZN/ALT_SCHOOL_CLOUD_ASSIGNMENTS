@@ -18,7 +18,7 @@ Go to the offical Vagrant Website and download the installer and download the ap
 
 step 2:
 
-Once the installation is done, to keep thing neat and orderly, create a folder and then open a terminal in that folder.. we will keep all our files in 1 location
+Once the installation is done, to keep things neat and orderly, create a folder and then open a terminal in that folder.. we will keep all our files in 1 location
 
 step 3:
 
