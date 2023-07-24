@@ -24,7 +24,9 @@ step 3:
 
 In a terminal run the intial vagrant command to generate the files needed for vagrant to run
 
-`vagrant init <os/version>`
+```
+vagrant init <os/version>
+```
 
 step 4:
 
@@ -34,7 +36,9 @@ step 5:
 
 You can now run the command to spin up a vm using the hypervisor of your choice.
 
-`vagrant up`
+```
+vagrant up
+```
 
 after a few mintues, another window with your guest os should pop up and you login with your credentials, the default is userid/password is vagrant/vagrant
 
@@ -44,6 +48,8 @@ step 6:
 
 run the ifconfig command to display some of the networking details of your Vm
 
-`ifconfig`
+```
+ifconfig
+```
 
 With that you succefully finished setting up vagrant, set up a vm and also seen the network details of your vm.
