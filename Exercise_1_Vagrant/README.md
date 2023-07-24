@@ -30,7 +30,7 @@ vagrant init <os/version>
 
 step 4:
 
-once the files are generated, you can do further configuration on the vagrant file.
+Once the files are generated, you can do further configuration on the vagrant file.
 
 step 5:
 
@@ -40,13 +40,17 @@ You can now run the command to spin up a vm using the hypervisor of your choice.
 vagrant up
 ```
 
-after a few mintues, another window with your guest os should pop up then you login with your credentials, the default userid/password is vagrant/vagrant
+After a few mintues, another window with your guest os should pop up then you login with your credentials, the default userid/password is vagrant/vagrant, Alternatively you can use the vagrant command to ssh into the vm, which should automatically log you in.
 
-NB:dont forget to change the password
+```
+vagrant ssh
+```
+
+NB: Dont forget to change the password
 
 step 6:
 
-run the ifconfig command to display some of the networking details of your Vm
+Run the ifconfig command to display some of the networking details of your Vm
 
 ```
 ifconfig
