@@ -50,7 +50,7 @@ NB: Dont forget to change the password
 
 step 6:
 
-Run the ifconfig command to display some of the networking details of your Vm
+Run the `ifconfig` command to display some of the networking details of your Vm
 
 ```
 ifconfig
