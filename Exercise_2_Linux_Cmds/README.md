@@ -16,7 +16,7 @@ Searches for files and directories based on various criteria like name, size, ty
 
 Output:
 
-<img src="./images/find.JPG" alt="Executing the find command" width="300" height="200">
+<img src="./images/find.JPG" alt="Executing the find command" width="100%" height="200">
 
 In this section i executed the `find` command to find the directories that belong to /var/log
 
@@ -44,7 +44,7 @@ Searches for patterns within text files, allowing you to filter and extract spec
 
 Output:
 
-<img src="./images/grep.JPG" alt="Executing the grep command" width="300" height="200">
+<img src="./images/grep.JPG" alt="Executing the grep command" width="100%" height="200">
 
 In this section i used the grep command to search a file caled syslogs and gilter the ones that had an error log in the output
 
@@ -56,7 +56,7 @@ The `chmod` command in Linux is used to change the permissions (read, write, exe
 :~$ chmod
 ```
 
-<img src="./images/chmod.JPG" alt="Executing the chmod command" width="300" height="200">
+<img src="./images/chmod.JPG" alt="Executing the chmod command" width="100%" height="200">
 
 this gives read, write, and execute permissions to the owner and read permissions to others for a file named
 
@@ -68,7 +68,7 @@ A command-line utility in Linux systems that allows you to query and view logs f
 :~$ journalctl
 ```
 
-<img src="./images/journalctl.JPG" alt="Executing the journalctl command" width="300" height="200">
+<img src="./images/journalctl.JPG" alt="Executing the journalctl command" width="100%" height="200">
 
 ### 6. `tar`:
 
@@ -78,7 +78,7 @@ A command-line tool for archiving files and directories into a single tarball, w
 :~$ tar
 ```
 
-<img src="./images/tar.JPG" alt="Executing the tar command" width="300" height="200">
+<img src="./images/tar.JPG" alt="Executing the tar command" width="100%" height="200">
 
 in this image, i executed the `tar` command to zip the restart_log.txt file into restartlog.tar
 
@@ -90,7 +90,7 @@ ps is a command-line utility for displaying information about running processes.
 :~$ ps
 ```
 
-<img src="./images/psaux.JPG" alt="Executing the grep command" width="300" height="200">
+<img src="./images/psaux.JPG" alt="Executing the grep command" width="100%" height="200">
 
 ### 8. `lsof`:
 
@@ -100,7 +100,7 @@ Lists open files and the processes that have them open, including regular files,
 :~$ lsof
 ```
 
-<img src="./images/lsof.JPG" alt="Executing the grep command" width="300" height="200">
+<img src="./images/lsof.JPG" alt="Executing the grep command" width="100%" height="200">
 
 In this section i used the `lsof` command to display a list of proccess and services currently running .
 
