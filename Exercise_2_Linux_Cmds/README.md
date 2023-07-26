@@ -48,9 +48,17 @@ Output:
 
 In this section i used the grep command to search a file caled syslogs and gilter the ones that had an error log in the output
 
-### 4. `awk`:
+### 4. `chmod`:
 
-A versatile text processing tool that allows you to manipulate and analyze structured data in files, using custom scripts. It's often used for data extraction, reporting, and data formatting tasks.
+The `chmod` command in Linux is used to change the permissions (read, write, execute) of files and directories. The name "chmod" stands for "change mode." It allows you to control the access levels for the owner, group members, and others for a specific file or directory.
+
+```
+:~$ chmod
+```
+
+<img src="./images/chmod.JPG" alt="Executing the chmod command" width="300" height="200">
+
+this gives read, write, and execute permissions to the owner and read permissions to others for a file named
 
 ### 5. `journalctl `:
 
@@ -72,7 +80,7 @@ A command-line tool for archiving files and directories into a single tarball, w
 
 <img src="./images/tar.JPG" alt="Executing the tar command" width="300" height="200">
 
-in this image, i executed the tar command to zip the restart_log.txt file into restartlog.tar
+in this image, i executed the `tar` command to zip the restart_log.txt file into restartlog.tar
 
 ### 7. `ps`:
 
@@ -94,7 +102,7 @@ Lists open files and the processes that have them open, including regular files,
 
 <img src="./images/lsof.JPG" alt="Executing the grep command" width="300" height="200">
 
-In this section i used the lsof command to display a list of proccess and services currently running .
+In this section i used the `lsof` command to display a list of proccess and services currently running .
 
 ### 9. `nc (netcat)`:
 
@@ -106,7 +114,7 @@ A powerful networking utility that can be used for port scanning, transferring d
 
 <img src="./images/netcat.JPG" alt="Executing the nc command" width="100%" height="200">
 
-the nc command was used here however :80 was already in use
+the `nc` command was used here however :80 was already in use
 
 ### 10. `at`:
 
