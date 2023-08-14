@@ -1,0 +1,2 @@
+origin	git@github.com:RY3IEZN/ALT_SCHOOL_CLOUD_ASSIGNMENTS.git (fetch)
+origin	git@github.com:RY3IEZN/ALT_SCHOOL_CLOUD_ASSIGNMENTS.git (push)

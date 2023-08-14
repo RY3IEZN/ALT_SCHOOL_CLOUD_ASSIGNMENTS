@@ -1,0 +1,59 @@
+commit e6c41b418b8aa13d9c988a227133b3029b72aa2a (HEAD -> master)
+Author: unknown <unekue2@gmail.com>
+Date:   Sun Aug 6 17:02:14 2023 +0100
+
+    add the catch command
+
+commit adf80b30060de202c5cc8956c5f4be19225c31cc
+Author: unknown <unekue2@gmail.com>
+Date:   Tue Aug 1 13:46:37 2023 +0100
+
+    setting up the explore cmd
+
+commit de36c1bf47c0c25d5bcc302489722d4bfc05f40f
+Author: unknown <unekue2@gmail.com>
+Date:   Sat Jul 22 09:55:53 2023 +0100
+
+    setting up cache complete
+
+commit 889ca9cc59af7b6962ae25eb596384864bb60418
+Author: unknown <unekue2@gmail.com>
+Date:   Sat Jul 22 09:09:13 2023 +0100
+
+    setting up cache
+
+commit 081259814f02b82372382b3ace85f4d7b7adafe5
+Author: unknown <unekue2@gmail.com>
+Date:   Thu Jul 13 16:03:16 2023 +0100
+
+    added ability to go forward/backwards in a page
+
+commit 2cb8799e1741ebfaf8b6c4aaa8961edee38baffe
+Author: unknown <unekue2@gmail.com>
+Date:   Tue Jul 11 12:30:21 2023 +0100
+
+    setting up the api layer
+
+commit 2e60588a4acea1bc6d5d7b5104a59b0c64240563
+Author: unknown <unekue2@gmail.com>
+Date:   Tue Jul 11 11:00:18 2023 +0100
+
+    refactored repl
+
+commit 4d3508485361ee624ba1d74b2c7b73c9171b06d1
+Author: unknown <unekue2@gmail.com>
+Date:   Sun Jul 9 14:54:10 2023 +0100
+
+    makimg the terminal interactive
+
+commit 994b97ee3ba53031c79cfe9138a023de847672bc
+Author: unknown <unekue2@gmail.com>
+Date:   Sun Jul 9 13:55:48 2023 +0100
+
+    added: added a unit test
+
+commit cce63dc9a8ef103e2019119c659fc8d3ef5be9ea
+Author: unknown <unekue2@gmail.com>
+Date:   Sat Jul 1 21:38:19 2023 +0100
+
+    initial commit
