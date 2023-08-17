@@ -88,7 +88,7 @@ input the password if you created the password and then it should look like this
 
 ## 4. Attach the user to a group called "altschool"
 
-This step involves a few more steps, we need to create the group, and then add the group.
+This step involves a few more steps, we need to create the group, and then add the user to the group.
 
 Firstly, We need to create a group:
 
