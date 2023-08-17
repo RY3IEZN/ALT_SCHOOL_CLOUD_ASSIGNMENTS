@@ -28,7 +28,7 @@ you will be prompted to fill in some information including setting a password
 
 once that is done, you have succesfully created a new user
 
-## 2. Set an expiry date of 2weeks for the user
+## 2. Set an expiry date of 2 weeks for the user
 
 After creating the above user, you can specify an expiry date for the account, this can be done using the using the `chage` command and also specifiying the `-E` flag.
 
@@ -39,6 +39,20 @@ After creating the above user, you can specify an expiry date for the account, t
 replace `username` with your desired username that you wish to create
 
 <img src="./images/set_expiry_date.png" alt="set expiry date" width="100%" height="100%">
+
+To verify that this has been set, you can run the `chage` with the `-l` flag.
+
+```
+:~$ sudo chage -l  <username>
+```
+
+<img src="./images/checkexpire.png" alt="set expiry date" width="100%" height="100%">
+
+you should see the details
+
+<img src="./images/checkexpired.png" alt="set expiry date" width="100%" height="100%">
+
+Great!
 
 ## 3. Prompt the user to change thier password on login
 
@@ -57,6 +71,20 @@ once this is done, you will see a notification that its done
 <img src="./images/force_user_to_change_pwd_success.png" alt="set expiry date dobe" width="100%" height="100%">
 
 On next login the user will be prompted to input a new password.
+
+To verify this, you simply use te `su - ` command, which means subsitute User and confirm
+
+```
+:~$ su - <username>
+```
+
+replace `username` with your desired username that you wish to create
+
+<img src="./images/switchuser.png" alt="set expiry date dobe" width="100%" height="100%">
+
+input the password if you created the password and then it should look like this
+
+<img src="./images/switchuserd.png" alt="set expiry date dobe" width="100%" height="100%">
 
 ## 4. Attach the user to a group called "altschool"
 
@@ -113,7 +141,7 @@ A. Use an editor to edit the content of `visudo`
 :~$ sudo visudo
 ```
 
-go to the end of file and the following
+go to the end of file and add the following
 
 ```
 %altschool ALL=(ALL) /bin/cat /etc/*
@@ -144,3 +172,5 @@ you will get a notification
 To confirm you can try signing in as the new user and you will be greeted with that error that the home directory doesnt exist
 
 <img src="./images/cofn.png" alt="set expiry date dobe" width="100%" height="100%">
+
+Enjoy!!!
