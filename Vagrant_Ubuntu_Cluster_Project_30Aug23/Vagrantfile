@@ -5,8 +5,8 @@ Vagrant.configure(2) do |config|
     master01.vm.hostname = "Master"
     master01.vm.network "private_network", ip: "192.168.56.3"
     master01.vm.boot_timeout = 600
-    # master01.vm.provision "shell", path: "create_user.sh"
-    # master01.vm.provision "shell", path: "lamp_stack.sh"
+    master01.vm.provision "shell", path: "create_user.sh"
+    master01.vm.provision "shell", path: "lamp_stack.sh"
   end
   
   config.vm.define "slave" do |slave01|
@@ -14,7 +14,7 @@ Vagrant.configure(2) do |config|
     slave01.vm.hostname = "Slave"
     slave01.vm.network "private_network", ip: "192.168.56.4"
     slave01.vm.boot_timeout = 600
-    # slave01.vm.provision "shell", path: "lamp_stack.sh"
+    slave01.vm.provision "shell", path: "lamp_stack.sh"
   end
   
   config.vm.define "loadbal" do |loadbal01|
@@ -22,25 +22,7 @@ Vagrant.configure(2) do |config|
     loadbal01.vm.hostname = "loadbal"
     loadbal01.vm.network "private_network", ip: "192.168.56.5"
     loadbal01.vm.boot_timeout = 600
-    # loadbal01.vm.provision "shell", path: "loadbalancer.sh"
-    loadbal01.vm.provider "virtualbox" do |vb|
-      vb.memory = "512"
-      vb.cpus = "1"
+    loadbal01.vm.provision "shell", path: "loadbalancer.sh"
   end
-end
-  
-  # config.vm.define "tested" do |tested01|
-  #   tested01.vm.box = "ubuntu/focal64"
-  #   tested01.vm.hostname = "tested"
-  #   tested01.vm.network "private_network", ip: "192.168.56.7"
-  #   tested01.vm.boot_timeout = 600
-  #   loadbal01.vm.provision "shell", path: "loadbalancer.sh"
-  # end
 
-  # config.vm.define "tester" do |tester|
-  #   tester.vm.box = "ubuntu/focal64"
-  #   tester.vm.hostname = "tester"
-  #   tester.vm.network "private_network", ip: "192.168.56.8"
-  #   tester.vm.provision "shell", path: "lamp_stack.sh"
-  # end
 end
