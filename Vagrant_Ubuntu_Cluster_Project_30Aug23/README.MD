@@ -31,7 +31,7 @@ Once Vagrant is done provisioning and begins configuring along the way we can ch
 
 <img src="./images/masterbooting.PNG" />
 
-lets check apache, open your browser and input the slave ip address
+lets check apache, open your browser and input the master ip address
 
 <img src="./images/apacheonmaster.png" />
 
