@@ -44,6 +44,7 @@ lets check php using the `php -v` commannd
 <img src="./images/checkphpslave.PNG" />
 
 the outcome
+
 <img src="./images/checkphpslaveo.PNG" />
 
 lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
@@ -80,7 +81,9 @@ To validate that our loadbalancer is working, you open a browser and input the i
     <img src="./images/lb1.png"  alt="Image 1" width="50%">
     <img src="./images/lb2.png"  alt="Image 2" width="50%">
 </div>
+
 <br/>
+
 # 7. Process Monitoring:
 
 On the Master node to display an overview of the Linux process management, showcasing currently running processes, we use the `top` command to display the service.
