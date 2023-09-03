@@ -29,11 +29,11 @@ The bash script is to create a user and to superuser group `./create_user.sh`, t
 
 Once Vagrant is done provisioning and begins configuring along the way we can check if apache, mysql and php has been installed, visit your browser and you should be greeted with "it works" from apache which means it was installed well, use the `systemctl status <ServiceName>` to check mysql and `php -v` to check php installation and the other things the bash scripts are too do
 
-<img src="./images/slavebooting.PNG" />
+<img src="./images/masterbooting.PNg" />
 
 lets check apache, open your browser and input the slave ip address
 
-<img src="./images/apacheonslave.png" />
+<img src="./images/apacheonmaster.png" />
 
 lets check php using the `php -v` commannd
 
@@ -41,11 +41,11 @@ lets check php using the `php -v` commannd
 :~$ php -v
 ```
 
-<img src="./images/checkphpslave.PNG" />
+<img src="./images/checkphpm.PNG" />
 
 the outcome
 
-<img src="./images/checkphpslaveo.PNG" />
+<img src="./images/checkphpmo.PNG" />
 
 lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
 
@@ -53,11 +53,11 @@ lets check mysql using the `systemctl status <ServiceName>` commannd (replace se
 :~$ systemctl status <servicename>
 ```
 
-<img src="./images/checkmysql.PNG" />
+<img src="./images/checkmysqlm.PNG" />
 
 the outcome,as you can see mysql is active
 
-<img src="./images/checkmysqlo.PNG" />
+<img src="./images/checkmysqlmo.PNG" />
 
 # 5. Slave node
 
