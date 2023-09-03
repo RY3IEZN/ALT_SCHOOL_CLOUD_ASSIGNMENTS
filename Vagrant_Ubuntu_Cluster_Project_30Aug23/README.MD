@@ -29,7 +29,7 @@ The bash script is to create a user and to superuser group `./create_user.sh`, t
 
 Once Vagrant is done provisioning and begins configuring along the way we can check if apache, mysql and php has been installed, visit your browser and you should be greeted with "it works" from apache which means it was installed well, use the `systemctl status <ServiceName>` to check mysql and `php -v` to check php installation and the other things the bash scripts are too do
 
-<img src="./images/masterbooting.PNg" />
+<img src="./images/masterbooting.PNG" />
 
 lets check apache, open your browser and input the slave ip address
 
@@ -118,8 +118,8 @@ Once Vagrant is done provisioning and begins configuring along the way we can ch
 To validate that our loadbalancer is working, you open a browser and input the ip address of the loadbalancer and it should take you the apache welcome page.NB i did some further customisation to make sure that its actually working and edit the `/var/www/html` and input the ip address of each node..so that we can be sure that its actually distributing the traffic
 
 <div style="display: flex; justify-content: space-between;">
-    <img src="./images/lb1.png"  alt="Image 1" width="50%">
-    <img src="./images/lb2.png"  alt="Image 2" width="50%">
+    <img src="./images/lb1.png"  alt="Image 1" width="45%">
+    <img src="./images/lb2.png"  alt="Image 2" width="45%">
 </div>
 
 <br/>
