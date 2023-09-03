@@ -19,6 +19,46 @@ To set up this infrastructure, you can simply just use 1 command `vagrant up` an
 1. Vagrant installed.
 1. A code editor of your choice, in this case Vscode.
 
+# 4. Master Node
+
+First of all, we are going to create a master node, which will serve as the control plane
+
+from our vagrant file under the slave section,we have some bash scripts to automate the setup
+
+The bash script is to create a user and to superuser group `./create_user.sh`, the next is to install the lamp stack `./lamp_stack.sh`
+
+Once Vagrant is done provisioning and begins configuring along the way we can check if apache, mysql and php has been installed, visit your browser and you should be greeted with "it works" from apache which means it was installed well, use the `systemctl status <ServiceName>` to check mysql and `php -v` to check php installation and the other things the bash scripts are too do
+
+<img src="./images/slavebooting.PNG" />
+
+lets check apache, open your browser and input the slave ip address
+
+<img src="./images/apacheonslave.png" />
+
+lets check php using the `php -v` commannd
+
+```
+:~$ php -v
+```
+
+<img src="./images/checkphpslave.PNG" />
+
+the outcome
+
+<img src="./images/checkphpslaveo.PNG" />
+
+lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
+
+```
+:~$ systemctl status <servicename>
+```
+
+<img src="./images/checkmysql.PNG" />
+
+the outcome,as you can see mysql is active
+
+<img src="./images/checkmysqlo.PNG" />
+
 # 5. Slave node
 
 In this section, we are going to create a slave node, which will get instructions files from the master node.
@@ -50,7 +90,7 @@ the outcome
 lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
 
 ```
-:~$ systemctl status mysql
+:~$ systemctl status <servicename>
 ```
 
 <img src="./images/checkmysql.PNG" />
