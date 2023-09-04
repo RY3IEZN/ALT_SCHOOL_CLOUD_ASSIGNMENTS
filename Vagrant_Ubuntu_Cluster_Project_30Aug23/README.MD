@@ -31,11 +31,11 @@ Once Vagrant is done provisioning and begins configuring along the way we can ch
 
 <img src="./images/masterbooting.PNG" />
 
-lets check apache, open your browser and input the master ip address
+A. lets check apache, open your browser and input the master ip address
 
 <img src="./images/apacheonmaster.png" />
 
-lets check php using the `php -v` commannd
+B. lets check php using the `php -v` commannd
 
 ```
 :~$ php -v
@@ -47,7 +47,7 @@ the outcome
 
 <img src="./images/checkphpmo.PNG" />
 
-lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
+C. lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
 
 ```
 :~$ systemctl status <servicename>
