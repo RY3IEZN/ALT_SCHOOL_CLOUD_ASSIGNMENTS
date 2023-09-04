@@ -19,7 +19,7 @@ To set up this infrastructure, you can simply just use 1 command `vagrant up` an
 1. Vagrant installed.
 1. A code editor of your choice, in this case Vscode.
 
-# 4. Master Node
+# 1. Master Node
 
 First of all, we are going to create a master node, which will serve as the control plane
 
@@ -59,7 +59,7 @@ the outcome,as you can see mysql is active
 
 <img src="./images/checkmysqlmo.PNG" />
 
-# 5. Slave node
+# 2. Slave node
 
 In this section, we are going to create a slave node, which will get instructions files from the master node.
 
@@ -101,7 +101,7 @@ the outcome,as you can see mysql is active
 
 With that Slave node is ready to go
 
-# 6. Loadbalancer node
+# 3. Loadbalancer node
 
 In this section, we are going to create a loadbalancer to handle the distribution of traffic between the master node
 
