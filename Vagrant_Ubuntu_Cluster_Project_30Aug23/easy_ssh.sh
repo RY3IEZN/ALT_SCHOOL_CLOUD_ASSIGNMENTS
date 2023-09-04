@@ -6,7 +6,7 @@ if [ ! -f ~/.ssh/id_rsa ]; then
 fi
 
 # Copy the public key to the slave node
-ssh-copy-id -i ~/.ssh/id_rsa.pub altschool@your_slave_ip
+ssh-copy-id -i ~/.ssh/id_rsa.pub altschool@192.168.56.4
 
 # Test SSH connection
-ssh altschool@your_slave_ip "echo SSH connection established successfully."
+ssh altschool@192.168.56.3 "echo SSH connection established successfully."
