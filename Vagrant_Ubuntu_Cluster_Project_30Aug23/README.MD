@@ -71,7 +71,7 @@ The `create_user.sh` script was used to automate the creation of the user, to ch
 :~$ compgen -u
 ```
 
-<img src="./images/show all users.PNG" />
+<img src="./images/show_all_users.PNG" />
 
 the outcome
 
