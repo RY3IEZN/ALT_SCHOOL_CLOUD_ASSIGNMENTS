@@ -59,6 +59,38 @@ the outcome,as you can see mysql is active
 
 <img src="./images/checkmysqlmo.PNG" />
 
+### Verifications
+
+we have to ensure the scripts worked
+
+#### A. Check if the user was createrd
+
+The `create_user.sh` script was used to automate the creation of the user, to check you can run the `compgen` command with the `-u` flag and you should see the altschool user created
+
+```
+:~$ compgen -u
+```
+
+<img src="./images/show all users.PNG" />
+
+the outcome
+
+<img src="./images/show all users2.PNG" />
+
+#### B. Check if the /mnt/altschool dir was created
+
+te `copy_mnt_slave` creates a directory and a file named content, to check simple try to cd to the directory and `ls` the directory.
+
+<img src="./images/see mnt.PNG" />
+
+#### c. ssh into slave without password
+
+for this stage i prefer to run it after the setup is complete, however the bash scirpt `easy_ssh.sh` automates all the process.. you may need to enter your password for the 1st time after thats all.
+
+<br/>
+<br/>
+<br/>
+
 # 2. Slave node
 
 In this section, we are going to create a slave node, which will get instructions files from the master node.
