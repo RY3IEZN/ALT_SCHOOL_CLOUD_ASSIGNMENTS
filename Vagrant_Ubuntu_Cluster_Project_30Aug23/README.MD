@@ -79,7 +79,7 @@ the outcome
 
 #### B. Check if the /mnt/altschool dir was created
 
-te `copy_mnt_slave` creates a directory and a file named content, to check simple try to cd to the directory and `ls` the directory.
+the `copy_mnt_slave` creates a directory and a file named content, to check simple try to cd to the directory and `ls` the directory.
 
 <img src="./images/see mnt.PNG" />
 
@@ -156,7 +156,7 @@ To validate that our loadbalancer is working, you open a browser and input the i
 
 <br/>
 
-# 7. Process Monitoring:
+# 4. Process Monitoring:
 
 On the Master node to display an overview of the Linux process management, showcasing currently running processes, we use the `top` command to display the service.
 
