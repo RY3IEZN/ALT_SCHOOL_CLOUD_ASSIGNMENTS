@@ -47,6 +47,10 @@ the outcome
 
 <img src="./images/checkphpmo.PNG" />
 
+also in the script, it enables index.php so that you can see the default php page
+
+<img src="./images/phpmaster.png" />
+
 C. lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
 
 ```
@@ -124,6 +128,10 @@ lets check php using the `php -v` commannd
 the outcome
 
 <img src="./images/checkphpslaveo.PNG" />
+
+also in the script, it enables index.php so that you can see the default php page
+
+<img src="./images/phpslave.png" />
 
 lets check mysql using the `systemctl status <ServiceName>` commannd (replace servicename with the service in this case mysql)
 
