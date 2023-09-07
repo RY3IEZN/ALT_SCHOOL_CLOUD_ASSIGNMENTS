@@ -87,6 +87,12 @@ the `copy_mnt_slave` creates a directory and a file named content, to check simp
 
 for this stage i prefer to run it after the setup is complete, however the bash scirpt `easy_ssh.sh` automates all the process.. you may need to enter your password for the 1st time after thats all.
 
+<img src="./images/sshhelper.PNG" />
+
+after that it doesnt require a password anymore
+
+<img src="./images/sshhelper2.PNG" />
+
 <br/>
 <br/>
 <br/>

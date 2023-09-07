@@ -24,5 +24,10 @@ sudo systemctl start apache2
 # Enable Apache to start on boot
 sudo systemctl enable apache2
 
+# enable phpinfo page
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/phpinfo.php
+
+# Restart Apache
+sudo systemctl restart apache2
 
 echo "LAMP stack installation completed."
