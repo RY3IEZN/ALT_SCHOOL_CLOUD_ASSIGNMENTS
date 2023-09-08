@@ -24,6 +24,9 @@ sudo systemctl start apache2
 # Enable Apache to start on boot
 sudo systemctl enable apache2
 
+# Enable Apache extensions for php
+sudo apt install php libapache2-mod-php
+
 # enable phpinfo page
 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/phpinfo.php
 
