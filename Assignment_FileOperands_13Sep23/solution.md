@@ -15,6 +15,8 @@ then echo "File is owned by the current user";
 fi
 ```
 
+<br>
+
 1. **-g file**: Checks if the file belongs to the same group as the user running the script.
 
    - Explanation: This operator returns true if the specified file belongs to the same group as the user executing the script.
@@ -29,10 +31,13 @@ if [ -g "$file" ]; then echo "File belongs to the user's group";
 fi
 ```
 
+<br>
+
 1. **-e file**: Checks if the file exists.
 
    - Explanation: This operator returns true if the specified file exists, whether it's a regular file, directory, or any other type of file.
    - Example: `if [ -e "$file" ]; then echo "File exists"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -48,6 +53,7 @@ fi
 
    - Explanation: This operator returns true if the specified file is a symbolic link.
    - Example: `if [ -h "$link" ]; then echo "File is a symbolic link"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -63,6 +69,7 @@ fi
 
    - Explanation: This operator returns true if the specified file is a directory.
    - Example: `if [ -d "$dir" ]; then echo "Directory exists"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -78,6 +85,7 @@ fi
 
    - Explanation: This operator returns true if the user executing the script has read permissions for the specified file.
    - Example: `if [ -r "$file" ]; then echo "File is readable"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -93,6 +101,7 @@ fi
 
    - Explanation: This operator returns true if the specified file is not empty, meaning its size is greater than zero.
    - Example: `if [ -s "$file" ]; then echo "File is not empty"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -108,6 +117,7 @@ fi
 
    - Explanation: This operator returns true if the user executing the script has write permissions for the specified file.
    - Example: `if [ -w "$file" ]; then echo "File is writable"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -123,6 +133,7 @@ fi
 
    - Explanation: This operator returns true if the user executing the script has execute permissions for the specified file.
    - Example: `if [ -x "$file" ]; then echo "File is executable"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -138,6 +149,7 @@ fi
 
    - Explanation: This operator returns true if the specified file is a character device file, typically used for character-oriented input/output.
    - Example: `if [ -c "$device" ]; then echo "File is a character device file"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -153,6 +165,7 @@ fi
 
    - Explanation: This operator returns true if the specified file is a symbolic link.
    - Example: `if [ -L "$link" ]; then echo "File is a symbolic link"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -162,12 +175,13 @@ fi
    fi
    ```
 
-   <br>
+      <br>
 
 1. **-b file**: Checks if the file is a block device file.
 
    - Explanation: This operator returns true if the specified file is a block device file, often used for block-oriented input/output.
    - Example: `if [ -b "$blockdevice" ]; then echo "File is a block device file"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -177,12 +191,13 @@ fi
    fi
    ```
 
-   <br>
+      <br>
 
 1. **-u file**: Checks if the file has the setuid permission.
 
    - Explanation: This operator returns true if the specified file has the setuid (Set User ID) permission set, which allows the file to run with the permissions of its owner.
    - Example: `if [ -u "$file" ]; then echo "File has setuid permission"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -192,12 +207,13 @@ fi
    fi
    ```
 
-   <br>
+      <br>
 
 1. **-N file**: Checks if the file has been modified since it was last read.
 
    - Explanation: This operator returns true if the specified file has been modified since it was last read or checked.
    - Example: `if [ -N "$file" ]; then echo "File has been modified"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
@@ -213,6 +229,7 @@ fi
 
    - Explanation: This operator returns true if the specified file has the sticky bit set, which is often used to prevent unauthorized deletion of files in directories.
    - Example: `if [ -k "$file" ]; then echo "File has sticky bit set"; fi`
+     <br>
 
    ```bash
    #! /bin/bash
