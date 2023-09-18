@@ -5,25 +5,29 @@
    - Explanation: This operator returns true if the specified file is owned by the user executing the script.
    - Example: `if [ -o "$file" ]; then echo "File is owned by the current user"; fi`
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -o "$file" ];
-   then echo "File is owned by the current user";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -o "$file" ];
+then echo "File is owned by the current user";
+fi
+```
 
 1. **-g file**: Checks if the file belongs to the same group as the user running the script.
 
    - Explanation: This operator returns true if the specified file belongs to the same group as the user executing the script.
    - Example: `if [ -g "$file" ]; then echo "File belongs to the user's group"; fi`
 
-   ```bash
+<br>
 
-   #! /bin/bash
-   if [ -g "$file" ]; then echo "File belongs to the user's group";
-   fi
-   ```
+```bash
+
+#! /bin/bash
+if [ -g "$file" ]; then echo "File belongs to the user's group";
+fi
+```
 
 1. **-e file**: Checks if the file exists.
 
@@ -38,6 +42,8 @@
    fi
    ```
 
+<br>
+
 1. **-h file**: Checks if the file is a symbolic link (alternative to -L).
 
    - Explanation: This operator returns true if the specified file is a symbolic link.
@@ -50,6 +56,8 @@
    then echo "File is a symbolic link";
    fi
    ```
+
+<br>
 
 1. **-d file**: Checks if the file is a directory.
 
@@ -64,6 +72,8 @@
    fi
    ```
 
+<br>
+
 1. **-r file**: Checks if the file is readable.
 
    - Explanation: This operator returns true if the user executing the script has read permissions for the specified file.
@@ -76,6 +86,8 @@
    then echo "File is readable";
    fi
    ```
+
+<br>
 
 1. **-s file**: Checks if the file is not empty (size greater than zero).
 
@@ -90,6 +102,8 @@
    fi
    ```
 
+<br>
+
 1. **-w file**: Checks if the file is writable.
 
    - Explanation: This operator returns true if the user executing the script has write permissions for the specified file.
@@ -102,6 +116,8 @@
    then echo "File is writable";
    fi
    ```
+
+<br>
 
 1. **-x file**: Checks if the file is executable.
 
@@ -116,6 +132,8 @@
    fi
    ```
 
+<br>
+
 1. **-c file**: Checks if the file is a character device file.
 
    - Explanation: This operator returns true if the specified file is a character device file, typically used for character-oriented input/output.
@@ -128,6 +146,8 @@
    then echo "File is a character device file";
    fi
    ```
+
+<br>
 
 1. **-L file**: Checks if the file is a symbolic link.
 
@@ -142,6 +162,8 @@
    fi
    ```
 
+   <br>
+
 1. **-b file**: Checks if the file is a block device file.
 
    - Explanation: This operator returns true if the specified file is a block device file, often used for block-oriented input/output.
@@ -154,6 +176,8 @@
    then echo "File is a block device file";
    fi
    ```
+
+   <br>
 
 1. **-u file**: Checks if the file has the setuid permission.
 
@@ -168,6 +192,8 @@
    fi
    ```
 
+   <br>
+
 1. **-N file**: Checks if the file has been modified since it was last read.
 
    - Explanation: This operator returns true if the specified file has been modified since it was last read or checked.
@@ -180,6 +206,8 @@
    then echo "File has been modified";
    fi
    ```
+
+<br>
 
 1. **-k file**: Checks if the file has the sticky bit set.
 
