@@ -37,15 +37,16 @@ fi
 
    - Explanation: This operator returns true if the specified file exists, whether it's a regular file, directory, or any other type of file.
    - Example: `if [ -e "$file" ]; then echo "File exists"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -e "$file" ];
-   then echo "File exists";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -e "$file" ];
+then echo "File exists";
+fi
+```
 
 <br>
 
@@ -53,15 +54,16 @@ fi
 
    - Explanation: This operator returns true if the specified file is a symbolic link.
    - Example: `if [ -h "$link" ]; then echo "File is a symbolic link"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -h "$link" ];
-   then echo "File is a symbolic link";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -h "$link" ];
+then echo "File is a symbolic link";
+fi
+```
 
 <br>
 
@@ -69,15 +71,16 @@ fi
 
    - Explanation: This operator returns true if the specified file is a directory.
    - Example: `if [ -d "$dir" ]; then echo "Directory exists"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -d "$dir" ];
-   then echo "Directory exists";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -d "$dir" ];
+then echo "Directory exists";
+fi
+```
 
 <br>
 
@@ -85,15 +88,16 @@ fi
 
    - Explanation: This operator returns true if the user executing the script has read permissions for the specified file.
    - Example: `if [ -r "$file" ]; then echo "File is readable"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -r "$file" ];
-   then echo "File is readable";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -r "$file" ];
+then echo "File is readable";
+fi
+```
 
 <br>
 
@@ -101,15 +105,16 @@ fi
 
    - Explanation: This operator returns true if the specified file is not empty, meaning its size is greater than zero.
    - Example: `if [ -s "$file" ]; then echo "File is not empty"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -s "$file" ];
-   then echo "File is not empty";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -s "$file" ];
+then echo "File is not empty";
+fi
+```
 
 <br>
 
@@ -117,15 +122,16 @@ fi
 
    - Explanation: This operator returns true if the user executing the script has write permissions for the specified file.
    - Example: `if [ -w "$file" ]; then echo "File is writable"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -w "$file" ];
-   then echo "File is writable";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -w "$file" ];
+then echo "File is writable";
+fi
+```
 
 <br>
 
@@ -133,15 +139,16 @@ fi
 
    - Explanation: This operator returns true if the user executing the script has execute permissions for the specified file.
    - Example: `if [ -x "$file" ]; then echo "File is executable"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -x "$file" ];
-   then echo "File is executable";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -x "$file" ];
+then echo "File is executable";
+fi
+```
 
 <br>
 
@@ -149,15 +156,16 @@ fi
 
    - Explanation: This operator returns true if the specified file is a character device file, typically used for character-oriented input/output.
    - Example: `if [ -c "$device" ]; then echo "File is a character device file"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -c "$device" ];
-   then echo "File is a character device file";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -c "$device" ];
+then echo "File is a character device file";
+fi
+```
 
 <br>
 
@@ -165,63 +173,67 @@ fi
 
    - Explanation: This operator returns true if the specified file is a symbolic link.
    - Example: `if [ -L "$link" ]; then echo "File is a symbolic link"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -L "$link" ];
-   then echo "File is a symbolic link";
-   fi
-   ```
+```bash
+#! /bin/bash
 
-      <br>
+if [ -L "$link" ];
+then echo "File is a symbolic link";
+fi
+```
+
+<br>
 
 1. **-b file**: Checks if the file is a block device file.
 
    - Explanation: This operator returns true if the specified file is a block device file, often used for block-oriented input/output.
    - Example: `if [ -b "$blockdevice" ]; then echo "File is a block device file"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -b "$blockdevice" ];
-   then echo "File is a block device file";
-   fi
-   ```
+```bash
+#! /bin/bash
 
-      <br>
+if [ -b "$blockdevice" ];
+then echo "File is a block device file";
+fi
+```
+
+<br>
 
 1. **-u file**: Checks if the file has the setuid permission.
 
    - Explanation: This operator returns true if the specified file has the setuid (Set User ID) permission set, which allows the file to run with the permissions of its owner.
    - Example: `if [ -u "$file" ]; then echo "File has setuid permission"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -u "$file" ];
-   then echo "File has setuid permission";
-   fi
-   ```
+```bash
+#! /bin/bash
 
-      <br>
+if [ -u "$file" ];
+then echo "File has setuid permission";
+fi
+```
+
+<br>
 
 1. **-N file**: Checks if the file has been modified since it was last read.
 
    - Explanation: This operator returns true if the specified file has been modified since it was last read or checked.
    - Example: `if [ -N "$file" ]; then echo "File has been modified"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -N "$file" ];
-   then echo "File has been modified";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -N "$file" ];
+then echo "File has been modified";
+fi
+```
 
 <br>
 
@@ -229,12 +241,13 @@ fi
 
    - Explanation: This operator returns true if the specified file has the sticky bit set, which is often used to prevent unauthorized deletion of files in directories.
    - Example: `if [ -k "$file" ]; then echo "File has sticky bit set"; fi`
-     <br>
 
-   ```bash
-   #! /bin/bash
+<br>
 
-   if [ -k "$file" ];
-   then echo "File has sticky bit set";
-   fi
-   ```
+```bash
+#! /bin/bash
+
+if [ -k "$file" ];
+then echo "File has sticky bit set";
+fi
+```
