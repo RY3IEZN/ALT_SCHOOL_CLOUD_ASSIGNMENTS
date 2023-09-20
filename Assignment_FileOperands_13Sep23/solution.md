@@ -35,9 +35,10 @@ fi
 <br>
 
 ```bash
-
 #! /bin/bash
-if [ -g "$file" ]; then echo "File belongs to the user's group";
+
+if [ -g "$file" ];
+then echo "File belongs to the user's group";
 fi
 ```
 
