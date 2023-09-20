@@ -1,5 +1,15 @@
 <!-- @format -->
 
+# File Operands
+
+Here are 15 file operands that we can perfrom on files. It will be exectued as bash scripts as sometimes flags have different outcomes when run directly in the terminal. After which you can call the bash scripts and the desired file eg.
+
+```
+:~$ checkers.sh <filename>
+```
+
+replace filename with the actual filename and its a required input
+
 1. **-o file**: Checks if the file is owned by the user running the script.
 
    - Explanation: This operator returns true if the specified file is owned by the user executing the script.
