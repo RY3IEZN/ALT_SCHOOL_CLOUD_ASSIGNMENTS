@@ -1,0 +1,43 @@
+
+Fri Sep 22 18:10:52 UTC 2023
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       347Mi       239Mi       0.0Ki       379Mi       466Mi
+Swap:             0B          0B          0B
+============================================
+Fri Sep 22 18:11:02 UTC 2023
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       347Mi       239Mi       0.0Ki       379Mi       466Mi
+Swap:             0B          0B          0B
+============================================
+Fri Sep 22 18:48:27 UTC 2023
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       202Mi       225Mi       0.0Ki       537Mi       600Mi
+Swap:             0B          0B          0B
+============================================
+Fri Sep 22 19:00:01 UTC 2023
+============================================
+Fri Sep 22 19:00:01 UTC 2023
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       201Mi       225Mi       0.0Ki       538Mi       601Mi
+Swap:             0B          0B          0B
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       201Mi       225Mi       0.0Ki       538Mi       601Mi
+Swap:             0B          0B          0B
+============================================
+Fri Sep 22 20:00:01 UTC 2023
+============================================
+Fri Sep 22 20:00:01 UTC 2023
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       315Mi        73Mi       0.0Ki       576Mi       487Mi
+Swap:             0B          0B          0B
+============================================
+               total        used        free      shared  buff/cache   available
+Mem:           965Mi       315Mi        73Mi       0.0Ki       576Mi       487Mi
+Swap:             0B          0B          0B
+============================================
