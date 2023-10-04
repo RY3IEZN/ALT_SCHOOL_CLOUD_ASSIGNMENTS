@@ -319,6 +319,6 @@ To edit the hosts file you can go to `/etc/hosts`
 :~$ nano /etc/hosts
 ```
 
-![Alt text](/images/endz.JPG)
+![](/images/endz.JPG)
 
 Enjoy!!!
