@@ -206,3 +206,5 @@ ensure to run this command in the root directory of the app
 Great, now we can visit 127.0.0.1:8000 in our browser which show us the default laravel page
 
 ![](/images/composer4.png)
+
+# 3. Setting up the Webserver
