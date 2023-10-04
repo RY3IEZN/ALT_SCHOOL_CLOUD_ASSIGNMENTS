@@ -208,3 +208,117 @@ Great, now we can visit 127.0.0.1:8000 in our browser which show us the default 
 ![](/images/composer4.png)
 
 # 3. Setting up the Webserver
+
+Now for the main part... instead of serving the application on port 8000, we are going to make it more streamline and make it serve from our webserver, here is an outline of this proceess
+
+- disable apache default site and enable our new site
+- create our new site directory and copy the content and give it permissions
+- visit our site using our domain/host name
+
+### A. Disable apache default site
+
+To disable the default site we run the `/usr/sbin/a2dissite` command
+
+```sh
+/usr/sbin/a2dissite 000-default.conf
+```
+
+this will disable the default 'it works" page
+
+Before we enable a new site, we need to create a configuration file aka .conf file. so navigate to the sitesenable file and then create a newfile using the `touch` command and any editor of your choice
+
+navigate to sites-avaiable directory
+
+```
+:~$ cd /etc/apache2/sites-available
+```
+
+then create the file
+
+```
+:~$ touch <site-name>.conf
+```
+
+create your config file and add these details inside woth your editor of choice
+
+```
+:~$ nano <site-name>.conf
+```
+
+```
+<VirtualHost *:80>
+    ServerAdmin webmaster@example.com
+    ServerName <site-name>.local  # Replace with your domain or server's IP address
+
+    DocumentRoot /var/www/<site-name>/public  # Replace with the path to your Laravel public directory
+
+    <Directory /var/www/<site-name>/public>  # Adjust this path to your Laravel public directory
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/<site-name>-error.log
+    CustomLog ${APACHE_LOG_DIR}/<site-name>-access.log combined
+
+    <IfModule mod_dir.c>
+        DirectoryIndex index.php
+    </IfModule>
+</VirtualHost>
+
+```
+
+after thats done we can now enable the new site we run the `/usr/sbin/a2ensite` command
+
+```sh
+/usr/sbin/a2ensite <site-name>
+```
+
+### B. Copy the content to our /var/www/ directory
+
+1st create the directory
+
+```sh
+:~$ mkdir -p /var/www/<site-name>
+```
+
+at this point you can copy the files from the already cloned repo in the home directory or you can navigate into the `/var/www/<site-name>` clone the repo, install the dependencies and update the .envs
+
+i would be copying mine from the cloned repo of the home directory to `/var/www/<site-name>`
+
+lest we forget, give permission to the files and directories
+
+replace with your own details
+
+```sh
+sudo chown -R <server-user>:www-data /var/www/example.com/
+sudo find /var/www/<site-name>/ -type f -exec chmod 664 {} \;
+sudo find /var/www/<site-name>/ -type d -exec chmod 775 {} \;
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
+```
+
+Reload apache when done
+
+```
+:~$ sudo systemctl reload apache2
+```
+
+Finally,you vist your browser with either
+`localhost`,`127.0.0.1`,domainName without the port number
+
+![Alt text](/images/endz.png)
+
+We have succesfully set up our backend webserver.
+
+To edit the hosts file you can go to `/etc/hosts`
+
+**Note** this wont be accesible on the internet.
+
+```
+:~$ nano /etc/hosts
+```
+
+![Alt text](/images/endz.JPG)
+
+Enjoy!!!
