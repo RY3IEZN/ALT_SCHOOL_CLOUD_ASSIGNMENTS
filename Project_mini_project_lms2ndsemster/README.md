@@ -320,5 +320,5 @@ To edit the hosts file you can go to `/etc/hosts`
 ```
 
 ![](/images/endz.JPG)
-
+<img src="./images/endz.JPG" />
 Enjoy!!!
