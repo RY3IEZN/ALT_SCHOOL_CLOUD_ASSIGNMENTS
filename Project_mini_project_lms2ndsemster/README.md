@@ -34,7 +34,7 @@ To install php use the `apt` command with `sudo` to do this, `sudo apt install p
 :~$ sudo apt install php
 ```
 
-![](/images/php1.JPG)
+![](images/php1.JPG)
 
 should look like this while installing
 
@@ -319,6 +319,6 @@ To edit the hosts file you can go to `/etc/hosts`
 :~$ nano /etc/hosts
 ```
 
-![](/images/endz.JPG)
 <img src="./images/endz.JPG" />
+
 Enjoy!!!
