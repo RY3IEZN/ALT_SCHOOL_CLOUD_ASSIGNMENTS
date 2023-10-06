@@ -38,7 +38,7 @@ To install php use the `apt` command with `sudo` to do this, `sudo apt install p
 
 should look like this while installing
 
-![](/images/php2.JPG)
+![](images/php2.JPG)
 
 Once its done we can check and confirm by using the `php -v` command
 
@@ -46,11 +46,11 @@ Once its done we can check and confirm by using the `php -v` command
 :~$ sudo apt install php
 ```
 
-![](/images/php3.JPG)
+![](images/php3.JPG)
 
 and heres the outcome
 
-![](/images/php4.JPG)
+![](images/php4.JPG)
 
 the sub-dependencies will be installed when we are installing composer
 
@@ -62,7 +62,7 @@ To install apache2 use the `apt` command with `sudo` to do this, `sudo apt insta
 :~$ sudo apt install apache2
 ```
 
-![](/images/apache1.JPG)
+![](images/apache1.JPG)
 
 # C. Mariadb
 
@@ -74,7 +74,7 @@ To install mariadb use the `apt` command with `sudo` to do this, `sudo apt insta
 :~$ sudo apt install mariadb-server
 ```
 
-![](/images/mariadb.JPG)
+![](images/mariadb.JPG)
 
 Once its done, check the version using the `--version` flag
 
@@ -82,7 +82,7 @@ Once its done, check the version using the `--version` flag
 :~$ sudo apt install mariadb --version
 ```
 
-![](/images/mariadb1.JPG)
+![](images/mariadb1.JPG)
 
 # D. Composer
 
@@ -129,15 +129,15 @@ Use the `git clone` command to clone the repo into our system
 :~$ git clone <repoUrl>
 ```
 
-![](/images/git9.JPG)
+![](images/git9.JPG)
 
 it succefully download
 
-![](/images/git8.JPG)
+![](images/git8.JPG)
 
 we can use the `ls` command to view the contents and we can see that its a laravel application
 
-![](/images/composers.JPG)
+![](images/composers.JPG)
 
 # B. Install dependencies
 
@@ -147,7 +147,7 @@ We can now use composer to install the dependencies, We run it using the `compos
 :~$ composer update
 ```
 
-![](/images/composers2.JPG)
+![](images/composers2.JPG)
 
 Let it run it course.
 
@@ -201,11 +201,11 @@ ensure to run this command in the root directory of the app
 :~$  php artisan serve
 ```
 
-![](/images/composer3.JPG)
+![](images/composer3.JPG)
 
 Great, now we can visit 127.0.0.1:8000 in our browser which show us the default laravel page
 
-![](/images/composer4.png)
+![](images/composer4.png)
 
 # 3. Setting up the Webserver
 
@@ -307,7 +307,7 @@ Reload apache when done
 Finally,you vist your browser with either
 `localhost`,`127.0.0.1`,domainName without the port number
 
-![Alt text](/images/endz.png)
+![Alt text](images/endz.png)
 
 We have succesfully set up our backend webserver.
 
