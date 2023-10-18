@@ -8,7 +8,7 @@ git clone https://github.com/laravel/laravel
 cd laravel
 
 # check directory
-echo pwd
+echo $(pwd)
 
 # rename .env 
 mv .env.example .env
@@ -44,4 +44,46 @@ composer update
 # php artistan migrate --seed
 
 # server the application on port:8000
-php artisan serve
+# php artisan serve
+
+# disable the default apache page
+sudo a2dissite 000-default.conf
+
+# navigate to sites-availble
+cd /etc/apache2/sites-available
+
+# check directory
+echo $(pwd)
+
+# create your side file
+sudo touch laravel.conf
+
+# update the content
+sudo sed -n 'w laravel.conf' <<EOF
+<VirtualHost *:80>
+    ServerAdmin uneku@ejig.com
+    ServerName laravel.local
+
+    DocumentRoot /var/www/laravel/public
+
+    <Directory /var/www/laravel/public>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog \${APACHE_LOG_DIR}/laravel-error.log
+    CustomLog \${APACHE_LOG_DIR}/laravel-access.log combined
+
+    <IfModule mod_dir.c>
+        DirectoryIndex index.php
+    </IfModule>
+</VirtualHost>
+EOF
+
+
+# enable the site
+sudo a2ensite laravel
+
+# create the site directory
+sudo mkdir -p /var/www/laravel
