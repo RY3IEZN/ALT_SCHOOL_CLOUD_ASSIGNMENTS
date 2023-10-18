@@ -1,0 +1,31 @@
+# @format
+---
+- name: Create Cron Job to Check Server Uptime
+  hosts: 127.0.0.1
+  become: yes
+
+  tasks:
+    - name: Create Cron Job
+      cron:
+        name: Check Server Uptime
+        job: "/usr/bin/uptime > /var/log/uptime.log"
+        minute: 0
+        hour: 0
+      become_user: root
+
+- name: Execute Bash Script and Create Cron Job
+  hosts: 127.0.0.1
+  become: yes # This is necessary to run commands with sudo privileges
+
+  tasks:
+    - name: Execute Bash Script
+      shell: /home/vagrant/hello.sh # Replace with the actual path to your script
+      register: script_output
+      ignore_errors: yes
+
+    - name: Verify PHP Application Accessibility
+      uri:
+        url: http://127.0.0.1 # Replace with the actual IP address
+        status_code: 200
+      ignore_errors: yes
+      register: php_app_check
