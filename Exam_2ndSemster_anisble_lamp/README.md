@@ -22,7 +22,7 @@ First of all, we are going to create a master node, which will serve as the cont
 
 From our vagrant file under the master section,we have some bash scripts to automate the setup
 
-The bash script is to create a user and to superuser group ./create_user.sh, the next is to install the lamp stack ./lamp_stack.sh
+The bash script is to automate the deployment of lamp stack , while the other script is for the configuration of an apache webserver with the laravel code for the website to be cloned from github and served through apache
 
 # C. Use Ansible to deploy script on Slave node
 

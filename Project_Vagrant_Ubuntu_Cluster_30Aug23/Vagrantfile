@@ -10,7 +10,6 @@ Vagrant.configure(2) do |config|
     slave01.vm.provision "shell", path: "create_user.sh"
   end
   
-  
   # create the loadbalancer
   config.vm.define "loadbal" do |loadbal01|
     loadbal01.vm.box = "ubuntu/focal64"

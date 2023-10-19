@@ -23,7 +23,7 @@ To set up this infrastructure, you can simply just use 1 command `vagrant up` an
 
 First of all, we are going to create a master node, which will serve as the control plane
 
-from our vagrant file under the slave section,we have some bash scripts to automate the setup
+from our vagrant file under the master section,we have some bash scripts to automate the setup
 
 The bash script is to create a user and to superuser group `./create_user.sh`, the next is to install the lamp stack `./lamp_stack.sh`
 
