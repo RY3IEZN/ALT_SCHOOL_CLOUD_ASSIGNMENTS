@@ -3,16 +3,19 @@
 # clone the repo
 echo "cloning the repo"
 git clone https://github.com/laravel/laravel
+sleep 5
 
 # enter into the repo
+echo 
 cd laravel
 
 # check directory
 echo $(pwd)
+sleep 5
+
 
 # rename .env 
 mv .env.example .env
-
 
 new_key=base64:ZXYwcmV1bGVhcjZ3N2NzdjJybzFiZzJ0cTU0ZnU3a2k=
 # Check if the new key is not empty
@@ -29,6 +32,7 @@ fi
 # install composer dependencies
 sudo apt-get install php-xml php- -y
 sudo apt install php-cli php-json php-common curl php-mbstring php-zip unzip php-curl php-xml -y
+sleep 5
 
 # install composer
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -55,7 +59,7 @@ cd /etc/apache2/sites-available
 # check directory
 echo $(pwd)
 
-# create your side file
+# create your site file
 sudo touch laravel.conf
 
 # update the content
@@ -87,3 +91,22 @@ sudo a2ensite laravel
 
 # create the site directory
 sudo mkdir -p /var/www/laravel
+
+# copy the content to site directory
+cd
+echo $(pwd)
+sudo cp -R laravel/* /var/www/laravel/
+
+# go back to the directory
+cd /var/www/laravel
+echo $(pwd)
+
+# set permission for the files
+sudo chown -R vagrant:www-data /var/www/laravel/
+sudo find /var/www/laravel/ -type f -exec chmod 664 {} \;
+sudo find /var/www/laravel/ -type d -exec chmod 775 {} \;
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
+
+# done
+echo 'webserver is up vist vm ip address'
