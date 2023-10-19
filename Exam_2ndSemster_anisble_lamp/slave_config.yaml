@@ -15,17 +15,34 @@
 
 - name: Execute Bash Script and Create Cron Job
   hosts: 127.0.0.1
-  become: yes # This is necessary to run commands with sudo privileges
+  become: yes
 
   tasks:
-    - name: Execute Bash Script
-      shell: /home/vagrant/hello.sh # Replace with the actual path to your script
+    - name: Execute lamp.sh Script
+      shell: /home/vagrant/lamp_stack.sh
       register: script_output
+      ignore_errors: yes
+
+    - name: setup apache laravel application
+      shell: /home/vagrant/setup_apache_laravel.sh
+      register: script_output2
       ignore_errors: yes
 
     - name: Verify PHP Application Accessibility
       uri:
-        url: http://127.0.0.1 # Replace with the actual IP address
+        url: http://192.168.129.4
         status_code: 200
       ignore_errors: yes
       register: php_app_check
+
+    - name: Print PHP Application Check
+      debug:
+        var: php_app_check
+
+    - name: Print PHP Application Check
+      debug:
+        var: script_output
+
+    - name: Print PHP Application Check
+      debug:
+        var: script_output2
