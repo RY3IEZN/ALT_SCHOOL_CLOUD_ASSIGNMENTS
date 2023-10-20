@@ -31,7 +31,7 @@ fi
 
 # install composer dependencies
 sudo apt-get install php-xml php-curl -y
-sudo apt install php-cli php-json php-common curl php-mbstring php-zip unzip php-curl php-xml -y
+sudo apt install php-cli php-json php-common curl php-mbstring php-zip unzip zip unzip php-curl php-xml -y
 sleep 5
 
 # install composer
@@ -46,9 +46,6 @@ composer update
 
 # populate the db
 # php artistan migrate --seed
-
-# server the application on port:8000
-# php artisan serve
 
 # disable the default apache page
 sudo a2dissite 000-default.conf
@@ -93,9 +90,9 @@ sudo a2ensite laravel
 sudo mkdir -p /var/www/laravel
 
 # copy the content to site directory
-cd
+cd /home/vagrant
 echo $(pwd)
-sudo cp -r laravel/* /var/www/laravel/
+sudo cp -r laravel/. /var/www/laravel/
 
 # go back to the directory
 cd /var/www/laravel
