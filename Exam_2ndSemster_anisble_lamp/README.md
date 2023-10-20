@@ -36,11 +36,11 @@ After you clone this repo, ensure you have ansible on the host/control node, sav
 
 While the ansible script is being executed you can check the logs, we should see a status code of 200, which means the site is available and reachable
 
-![alt](/images/ansible1.png)
+![alt](images/ansible1.png)
 
 as you can see we used ansible to check its accessibility and also you can visit the site using the VM_IP in your browser
 
-![alt](/images/ansible2.png)
+![alt](images/ansible2.png)
 
 we can also confirm the cronJob is set by checking the cronjobs list
 
@@ -50,7 +50,7 @@ we can also confirm the cronJob is set by checking the cronjobs list
 
 the outcome should like this
 
-![alt](/images/ansible3.JPG)
+![alt](images/ansible3.JPG)
 
 In this way the project is complete but only accessible through localhost for now.
 
