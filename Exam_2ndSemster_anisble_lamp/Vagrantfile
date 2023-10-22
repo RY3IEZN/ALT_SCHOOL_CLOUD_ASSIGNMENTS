@@ -1,12 +1,12 @@
 Vagrant.configure(2) do |config|
     
-  # # create the slave node
-  # config.vm.define "slave" do |slave01|
-  #   slave01.vm.box = "ubuntu/jammy64"
-  #   slave01.vm.hostname = "Slave"
-  #   slave01.vm.network "private_network", ip: "192.168.129.4"
-  #   slave01.vm.boot_timeout = 1200
-  # end
+  create the slave node
+  config.vm.define "slave" do |slave01|
+    slave01.vm.box = "ubuntu/jammy64"
+    slave01.vm.hostname = "Slave"
+    slave01.vm.network "private_network", ip: "192.168.129.4"
+    slave01.vm.boot_timeout = 1200
+  end
   
   # create the master node
   config.vm.define "master" do |master01|

@@ -10,23 +10,25 @@
 1. Ansible
 1. A code editor of your choice, in this case Vscode.
 
+# A. Automate provisioning of ansible
+
 To set up this infrastructure, you can simply just use 1 command `vagrant up` and it will automatically provision and configure the master and slave nodes, leaving the slave node clean
 
 ```
 :~$ vagrant up
 ```
 
-# 1. Master Node
+### 1. Master Node
 
 First of all, we are going to create a master node, which will serve as the control plane
 
 From our vagrant file under the master section,we have some bash scripts to automate the setup
 
-The bash script is to automate the deployment of lamp stack , while the other script is for the configuration of an apache webserver with the laravel code for the website to be cloned from github and served through apache
+The bash script is to automate the deployment of lamp stack `"./lamp_stack"`, while the other script is for the configuration of an apache webserver with the laravel code for the website to be cloned from github and served through apache `"./setup_apache_laravel.sh"`
 
-# C. Use Ansible to deploy script on Slave node
+# B. Use Ansible to deploy script on Slave node
 
-For this section we are going to use Ansible to execute the bash script and also use it to test the availablity and accessibility of the website, It will also create a cron job for us.
+For this section we are going to use [Ansible]() to execute the bash script and also use it to test the availablity and accessibility of the website, It will also create a cron job for us.
 
 After you clone this repo, ensure you have ansible on the host/control node, save keys and update the host files. then you can run the ansible playbook `slave_config.yaml`, using the `ansible-playbook` command
 
