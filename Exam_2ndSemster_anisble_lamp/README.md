@@ -18,7 +18,7 @@
 
 To set up this infrastructure, you can simply use 1 command `vagrant up` and it will automatically provision and configure the master and slave nodes, leaving the slave node clean
 
-```
+```sh
 :~$ vagrant up
 ```
 
@@ -50,14 +50,14 @@ Since we are using vagarant in this guide, we can use this command to copy the k
 
 Step1
 
-```
-
+```sh
+master_public_key=$(vagrant ssh master -c "sudo su - vagrant -c 'cat ~/.ssh/id_rsa.pub'")
 ```
 
 Step2
 
-```
-
+```sh
+vagrant ssh slave -c "echo '$master_public_key' | sudo su - vagrant -c 'tee -a ~/.ssh/authorized_keys'"
 ```
 
 # B. Use Ansible to deploy script on Slave node
@@ -66,7 +66,7 @@ For this section we are going to use [Ansible](https://docs.ansible.com/ansible/
 
 After you clone this repo, ensure you have ansible on the host/control node, save keys and update the host files. then you can run the ansible playbook `slave_config.yaml`, using the `ansible-playbook` command
 
-```
+```sh
 :~$ ansible-playbook slave_config.yaml
 ```
 
@@ -80,7 +80,7 @@ as you can see we used ansible to check its accessibility and also you can visit
 
 we can also confirm the cronJob is set by checking the cronjobs list
 
-```
+```sh
 :~$ sudo crontab -e
 ```
 
