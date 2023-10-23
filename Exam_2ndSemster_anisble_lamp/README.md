@@ -42,16 +42,33 @@ Once the vm has been provisioned, we will also allow vagrant to automate the con
 
 Once its done configuring we can visit the `http://VM_IP_ADDRESS` in our browser and see the default laravel page
 
+Your virtual box dashboard would like this too
+
+![](images/vbbox.JPG)
+
 #### Side Note
 
 You can either choose to run ansible from your host machine or you can choose to use the master node to configure the slave node.
 
 Since we are using vagarant in this guide, we can use this command to copy the key from master and save it to slave, so as to enable easy and seamless ssh between the master and the slave, as ansible needs to be able to communicate to the slave
 
+for unix-like os
 Step1
 
 ```sh
 master_public_key=$(vagrant ssh master -c "sudo su - vagrant -c 'cat ~/.ssh/id_rsa.pub'")
+```
+
+Step2
+
+```sh
+vagrant ssh slave -c "echo '$master_public_key' | sudo su - vagrant -c 'tee -a ~/.ssh/authorized_keys'"
+```
+
+for windows/pwsh
+
+```pwsh
+$master_public_key=vagrant ssh master -c "sudo su - vagrant -c 'cat ~/.ssh/id_rsa.pub'"
 ```
 
 Step2

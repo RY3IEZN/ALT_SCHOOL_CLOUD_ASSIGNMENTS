@@ -1,7 +1,7 @@
 # @format
 
 - name: Create Cron Job to Check Server Uptime
-  hosts: webserver
+  hosts: 192.168.129.4
   become: "yes"
 
   tasks:
@@ -14,7 +14,7 @@
       become_user: root
 
 - name: Execute Bash Script and Create Cron Job
-  hosts: webserver
+  hosts: 192.168.129.4
   become: "yes"
 
   vars:
@@ -22,12 +22,12 @@
 
   tasks:
     - name: Execute the shell script on the slave node
-      command: sh lamp_stack.sh
+      script: /home/vagrant/lamp_stack.sh
       register: script_output
       ignore_errors: "yes"
 
     - name: Execute the shell script on the slave node
-      command: sh setup_apache_laravel.sh
+      script: /home/vagrant/setup_apache_laravel.sh
       register: script_output2
       ignore_errors: "yes"
 
