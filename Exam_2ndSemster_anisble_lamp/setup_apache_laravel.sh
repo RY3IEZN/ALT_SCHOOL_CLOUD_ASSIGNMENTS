@@ -21,7 +21,7 @@ mv .env.example .env
 # install composer dependencies
 echo "install php and composer dependencies"
 sudo apt-get install php-xml php-curl -y
-sudo apt install php-cli php-json php-common curl php-mbstring php-zip unzip zip unzip php-curl php-xml -y
+sudo apt install php-cli php-json php-common curl php-mbstring unzip zip unzip php-curl php-xml -y
 sleep 5
 
 # install composer

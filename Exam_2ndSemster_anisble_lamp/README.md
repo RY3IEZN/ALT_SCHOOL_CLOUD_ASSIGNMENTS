@@ -42,6 +42,8 @@ Once the vm has been provisioned, we will also allow vagrant to automate the con
 
 Once its done configuring we can visit the `http://VM_IP_ADDRESS` in our browser and see the default laravel page
 
+![](images/lav1.png)
+
 Your virtual box dashboard would like this too
 
 ![](images/vbbox.JPG)
