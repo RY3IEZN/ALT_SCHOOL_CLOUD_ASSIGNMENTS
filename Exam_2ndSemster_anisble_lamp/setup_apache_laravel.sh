@@ -6,7 +6,7 @@ git clone https://github.com/laravel/laravel
 sleep 5
 
 # enter into the repo
-echo 
+echo "cd into laravel folder"
 cd laravel
 
 # check directory
