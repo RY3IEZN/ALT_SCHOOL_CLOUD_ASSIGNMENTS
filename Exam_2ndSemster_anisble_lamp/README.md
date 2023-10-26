@@ -68,6 +68,7 @@ vagrant ssh slave -c "echo '$master_public_key' | sudo su - vagrant -c 'tee -a ~
 ```
 
 for windows/pwsh
+step1
 
 ```pwsh
 $master_public_key=vagrant ssh master -c "sudo su - vagrant -c 'cat ~/.ssh/id_rsa.pub'"
@@ -82,6 +83,8 @@ vagrant ssh slave -c "echo '$master_public_key' | sudo su - vagrant -c 'tee -a ~
 # B. Use Ansible to deploy script on Slave node
 
 For this section we are going to use [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-ubuntu) to execute the bash script and also use it to test the availablity and accessibility of the website, It will also create a cron job for us.
+
+NB:For this section, you can either copy the content to the master node and install ansible and run it from there or you can run it directly from your host machine assuming you have ansible already installed on it
 
 After you clone this repo, ensure you have ansible on the host/control node, save keys and update the host files. then you can run the ansible playbook `slave_config.yaml`, using the `ansible-playbook` command
 
