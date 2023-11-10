@@ -8,6 +8,42 @@
 
 # B. Create the Virtual Machines (EC2)
 
+Now that we have the networking infrastructure in place we can go ahead and create the infrastructure, we are going to create 2 vms and place each of them in to each subnet.
+
+Sign into the console and search for EC2 and navigate to the dashboard
+
+![alt](images/ec21.png)
+
+Head over to the EC2 dashboard and click on "launch instances"
+
+![alt](images/ec22.png)
+
+You can give your VM a names and select an OS type, for this demo we will be using ubuntu
+
+![alt](images/ec23.png)
+
+from here ensure to select the desired architecure and configure the size and capacity of your virtual machine
+
+For the purpose of this demo, kindly use t2.micro,if you are new you should still be legible for the cost to be covered by free tier
+
+![alt](images/ec24.png)
+
+and then generate and download a new key pair and store is securely
+
+![alt](images/ec25.png)
+
+Now for the networking part, make sure to click edit and select the newly created VPC and also for the subnet ensure to place it in the newly created vpc, 1 private and 1 in public subnet lastly disable auto assign public ip while leaving the firewalls as default
+
+![alt](images/ec26.png)
+
+We will update the security rules later, as for storage leave as default for now. then click launch instance
+
+![alt](images/ec27.png)
+
+Onces that done we should have our virtual machine ready to go, You can repeat the same steps above and place other vms in each subnet or according to specifications
+
+![alt](images/ec28.png)
+
 ### Create Rule in the security groups
 
 Before we procced to connecting to our vms, we need to add a rule to the security group so that both vms can accept icmp pings, Go to the ec2 dashboard and click on "security groups" on the panel on the left, select the group id and click actions > "edit inbound rules"
@@ -25,7 +61,7 @@ then click save
 
 NB:The source destination should not be anyhwere(0.0.0.0/0) for security reasons, rather it would be your current ip or specific ip address. but for the sake of this demo.. we can leave it as that "0.0.0.0/0"
 
-# E. Connect and ping each VM
+# C. Connect and ping each VM
 
 ### Test Connectivity between vms
 
