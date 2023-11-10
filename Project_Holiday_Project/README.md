@@ -9,3 +9,7 @@
     50%">
     <img src="./images/aws_holiday_project.png"  alt="Image 2" width="49%">
 </div>
+
+## Prerequisites
+
+1. An Aws Account

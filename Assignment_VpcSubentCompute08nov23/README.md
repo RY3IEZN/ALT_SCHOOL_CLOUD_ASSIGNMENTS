@@ -22,7 +22,7 @@ Another browser window should open up and a view of a terminal into your vm. Gre
 
 To test that we can communicate to the both vm from each other, we can use the ping command to test
 
-```
+```sh
 :~$ ping <VM_PRIVATE_IP_ADDRESS>
 ```
 
