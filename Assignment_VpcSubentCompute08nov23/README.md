@@ -4,7 +4,47 @@
 
 ![alt](images/vpcsubec2.png)
 
-# A. Create the netowrking infrastrucute
+# A. Create the netowrking infrastructure
+
+We are going to create the network infrastructure and we are going to create a vpc and subnet to host our infrastructure, we may need an s3_endpoint as we are going to keep all infrastrucure in a private network
+
+We will create each network resource seperately.
+
+So lets get to it.. sign in to the EC2 console and search for VPC and navigate to the dashboard
+
+![alt](images/altvpc1.png)
+
+On the dashboard select "Create VPC" and then follow the prompt
+
+![alt](images/altvpc2.png)
+
+Select VPC only
+
+![alt](images/vpca1.png)
+
+We are going to use a VPC CIDR of 10.0.0.0/16 while leaving no ipv6 cidr
+
+![alt](images/vpca2.png)
+
+fill in the tags and then click create vpc.
+
+![alt](images/vpca2.png)
+
+Next we can move to subnets on the panel on the left
+
+![alt](images/subnet1.png)
+
+select the vpc you newly created and leave the availablity zone preference to no preference
+
+![alt](images/subnet2.png)
+
+we have to set the subnet to the a network within the vpc network, so for the public subnet we will use 10.0.4.0/24 and 10.0.3.0/24 for the private subnet
+
+![alt](images/subnet3.png)
+
+Once its done, we now have to subnet
+
+![alt](images/subnet4.png)
 
 # B. Create the Virtual Machines (EC2)
 
@@ -55,7 +95,7 @@ Click on add rule, set as follows,
 1. Type: All ICMP - Ipv4
 1. Source: Anywhere - Ipv4
 
-then click save
+then click save, repeat same steps for the other security group
 
 ![alt](images/sg2.png)
 
