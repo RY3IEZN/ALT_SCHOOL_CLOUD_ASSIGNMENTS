@@ -93,6 +93,34 @@ With this done now, our packets will now know which route to follow to get to th
 
 Now that our network infrastructure is set up, we can now go ahead and create our instances. 4 instances 1 in each subnet in each vpc
 
+On the console in the search bar, search for EC2 and navigate to it dashboard
+
+![alt](images/ec21p.png)
+
+select "launch instance"
+
+![alt](images/ec22p.png)
+
+give your server a name and select the instance OS type, for speed and ease i used ubuntu
+
+![alt](images/ec23p.png)
+
+select the instance type, configure the cpu cores and ram and also generate a key pair or use
+
+![alt](images/ec24pa.png)
+
+![alt](images/ec24pb.png)
+
+For the 1st instance,we will place it in the new vpc and in the public subnet, which we will use and jump around all the servers
+
+![alt](images/ec25p.png)
+
+configure storage, which can be left as default for now, and then clock create instance
+
+![alt](images/ec26p.png)
+
+Repeat all the same steps placing each instance in each subnet i.e 1 in private and public subnet, also change to the other region and do same.
+
 # E. Connectivity Test
 
 Now that we have set up our network,our compute and other infrastructure, we can go ahead and test connectivity between both regions.
