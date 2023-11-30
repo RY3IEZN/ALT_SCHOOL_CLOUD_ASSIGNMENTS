@@ -4,7 +4,7 @@
 
 ![alt](images/vpcsubec2.png)
 
-# A. Create the netowrking infrastructure
+# A. Create the netowrking infrastructure.
 
 We are going to create the network infrastructure and we are going to create a vpc and subnet to host our infrastructure, we may need an s3_endpoint as we are going to keep all infrastrucure in a private network
 
