@@ -10,6 +10,9 @@ sudo apt update -y
 echo "Installing Nginx..."
 sudo apt install -y nginx
 
+echo "<h1>welcome to $(hostname) server</h1>" | sudo tee /var/www/html/index.html
+
+
 # Define the master and slave node IP addresses
 master_ip="192.168.56.3"
 slave_ip="192.168.56.4"
