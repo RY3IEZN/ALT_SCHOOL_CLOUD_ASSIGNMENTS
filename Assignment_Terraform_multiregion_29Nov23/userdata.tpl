@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# install ansible
+sudo apt update
+sudo apt install software-properties-common
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible -y
+
+# install docker
 sudo apt-get update -y &&
 sudo apt-get install -y \
 apt-transport-https \
@@ -12,3 +19,6 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update -y &&
 sudo sudo apt-get install docker-ce docker-ce-cli containerd.io -y &&
 sudo usermod -aG docker ubuntu
+ 
+# run a docker image
+sudo docker run -d -p 3000:3000 nickstersz/frontendserver:frontend

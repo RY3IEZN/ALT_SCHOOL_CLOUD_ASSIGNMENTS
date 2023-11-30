@@ -7,9 +7,9 @@ resource "aws_key_pair" "uneku_key" {
 
 # create the instance
 resource "aws_instance" "instance" {
-  count                  = 2
+  count                  = 1
   ami                    = data.aws_ami.server_ami.id
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   subnet_id              = var.public_subnet
   vpc_security_group_ids = [var.public_sg]
 
