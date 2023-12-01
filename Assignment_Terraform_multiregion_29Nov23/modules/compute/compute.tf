@@ -6,11 +6,14 @@ resource "aws_key_pair" "uneku_key" {
   key_name   = "uneku_key"
   public_key = file(var.public_key_path)
 
+  tags = {
+    uneku = "keys-${terraform.workspace}"
+  }
 }
 
 # create the instance
 resource "aws_instance" "instance" {
-  count                  = 1
+  count                  = 2
   ami                    = data.aws_ami.server_ami.id
   instance_type          = "t2.micro"
   subnet_id              = var.public_subnet
