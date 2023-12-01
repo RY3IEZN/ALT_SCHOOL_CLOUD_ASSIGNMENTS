@@ -1,3 +1,6 @@
+# ---networking/networking.tf---
+
+
 # create a vpc
 resource "aws_vpc" "uneku_vpc" {
   cidr_block           = var.vpc_cidr

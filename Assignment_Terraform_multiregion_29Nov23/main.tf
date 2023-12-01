@@ -15,21 +15,21 @@ module "networking2" {
   }
 }
 
-# module "compute" {
-#   source          = "./modules/compute"
-#   public_key_path = "~/.ssh/k3key.pub"
-#   volume_size     = 30
-#   public_subnet   = module.networking.public_subnet
-#   public_sg       = module.networking.public_sg
-# }
+module "compute" {
+  source          = "./modules/compute"
+  public_key_path = "~/.ssh/k3key.pub"
+  volume_size     = 30
+  public_subnet   = module.networking.public_subnet
+  public_sg       = module.networking.public_sg
+}
 
-# module "compute2" {
-#   source          = "./modules/compute"
-#   public_key_path = "~/.ssh/k3key.pub"
-#   volume_size     = 30
-#   public_subnet   = module.networking.public_subnet
-#   public_sg       = module.networking.public_sg
-# providers = {
-# aws = aws.london
-# }
-# }
+module "compute2" {
+  source          = "./modules/compute"
+  public_key_path = "~/.ssh/k3key.pub"
+  volume_size     = 30
+  public_subnet   = module.networking.public_subnet
+  public_sg       = module.networking.public_sg
+  providers = {
+    aws = aws.frankfurt
+  }
+}

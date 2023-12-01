@@ -1,3 +1,5 @@
+# ---networking/outputs.tf---
+
 output "public_subnet" {
   value = aws_subnet.uneku_public_subnet.id
 }

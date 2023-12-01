@@ -1,3 +1,6 @@
+# ---compute/compute.tf---
+
+
 # create the key
 resource "aws_key_pair" "uneku_key" {
   key_name   = "uneku_key"

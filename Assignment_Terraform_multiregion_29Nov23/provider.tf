@@ -1,3 +1,6 @@
+# ---root/provider.tf
+
+
 # configure the provider
 terraform {
   required_providers {

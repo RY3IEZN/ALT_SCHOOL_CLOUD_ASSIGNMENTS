@@ -1,6 +1,4 @@
-# ---root/variables/tf---
-
-# variables.tf
+# ---root/variables.tf---
 
 variable "regions" {
   description = "List of AWS regions"
