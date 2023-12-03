@@ -18,15 +18,3 @@ provider "aws" {
   secret_key = ""
 }
 
-provider "aws" {
-  alias      = "frankfurt"
-  region     = "eu-central-1"
-  access_key = ""
-  secret_key = ""
-}
-provider "aws" {
-  alias      = "london"
-  region     = "eu-west-2"
-  access_key = ""
-  secret_key = ""
-}

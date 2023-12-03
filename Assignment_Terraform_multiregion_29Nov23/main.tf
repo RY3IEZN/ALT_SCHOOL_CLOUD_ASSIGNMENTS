@@ -21,14 +21,21 @@ module "compute" {
   volume_size     = 30
   public_subnet   = module.networking.public_subnet
   public_sg       = module.networking.public_sg
+  user_data       = file("userdata.tpl")
+  enviroment      = "lol"
+  instance_type   = "t2.micro"
 }
 
 module "compute2" {
   source          = "./modules/compute"
+  instance_type   = "t2.micro"
+  enviroment      = "lol"
   public_key_path = "~/.ssh/k3key.pub"
   volume_size     = 30
   public_subnet   = module.networking.public_subnet
   public_sg       = module.networking.public_sg
+  user_data       = file("userdata.tpl")
+
   providers = {
     aws = aws.frankfurt
   }

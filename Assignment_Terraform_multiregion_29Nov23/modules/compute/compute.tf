@@ -7,7 +7,7 @@ resource "aws_key_pair" "uneku_key" {
   public_key = file(var.public_key_path)
 
   tags = {
-    uneku = "keys-${terraform.workspace}"
+    enviroment = "${var.enviroment}_key"
   }
 }
 
@@ -15,7 +15,7 @@ resource "aws_key_pair" "uneku_key" {
 resource "aws_instance" "instance" {
   count                  = 2
   ami                    = data.aws_ami.server_ami.id
-  instance_type          = "t2.micro"
+  instance_type          = var.instance_type
   subnet_id              = var.public_subnet
   vpc_security_group_ids = [var.public_sg]
 
@@ -24,7 +24,7 @@ resource "aws_instance" "instance" {
   }
   key_name = aws_key_pair.uneku_key.id
 
-  user_data = file("userdata.tpl")
+  user_data = file("../userdata.tpl")
 
 
   #   provisioner "local-exec" {
