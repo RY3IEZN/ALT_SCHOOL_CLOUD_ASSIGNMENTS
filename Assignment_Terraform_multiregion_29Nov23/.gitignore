@@ -18,8 +18,10 @@ terrafrom.tfvars
 
 prod\.terraform.lock.hcl
 staging\.terraform.lock.hcl
-dev.terraform.lock.hcl
+dev\.terraform.lock.hcl
+
 *.terraform.lock.hcl
+.terraform.lock.hcl
 
 .terraform
 */.terraform
