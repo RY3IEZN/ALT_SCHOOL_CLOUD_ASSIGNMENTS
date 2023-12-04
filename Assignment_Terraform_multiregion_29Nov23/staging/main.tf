@@ -1,3 +1,5 @@
+# ---staging/main.tf---
+
 module "compute" {
   source          = "../modules/compute"
   public_key_path = "~/.ssh/k3key.pub"

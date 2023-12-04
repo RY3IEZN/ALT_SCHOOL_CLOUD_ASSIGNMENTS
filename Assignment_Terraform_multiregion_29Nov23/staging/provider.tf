@@ -1,4 +1,4 @@
-# ---staging/provider.tf
+# ---staging/provider.tf---
 
 # configure the provider
 terraform {

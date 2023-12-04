@@ -1,1 +1,1 @@
-
+# ---root/variable.tf---

@@ -1,4 +1,4 @@
-# ---root/provider.tf
+# ---prod/provider.tf
 
 
 # configure the provider

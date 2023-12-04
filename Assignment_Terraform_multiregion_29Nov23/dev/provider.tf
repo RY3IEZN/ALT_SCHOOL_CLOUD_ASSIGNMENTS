@@ -1,5 +1,4 @@
-# ---root/provider.tf
-
+# ---dev/provider.tf---
 
 # configure the provider
 terraform {
