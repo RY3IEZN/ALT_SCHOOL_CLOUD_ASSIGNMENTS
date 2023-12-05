@@ -8,7 +8,7 @@ resource "aws_vpc" "uneku_vpc" {
   enable_dns_support   = true
 
   tags = {
-    uneku = "vpc-${terraform.workspace}"
+    uneku = "${var.enviroment}-vpc"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_internet_gateway" "uneku_igw" {
   vpc_id = aws_vpc.uneku_vpc.id
 
   tags = {
-    uneku = "igw-${terraform.workspace}"
+    uneku = "${var.enviroment}-igw"
 
   }
 }
@@ -29,7 +29,7 @@ resource "aws_subnet" "uneku_public_subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    uneku = "public_subnet-${terraform.workspace}"
+    uneku = "${var.enviroment}-public_subnet"
   }
 
 
@@ -41,7 +41,7 @@ resource "aws_route_table" "pubic_route_table" {
   vpc_id = aws_vpc.uneku_vpc.id
 
   tags = {
-    uneku = "public_rt-${terraform.workspace}"
+    uneku = "${var.enviroment}-public_rt"
   }
 }
 
@@ -84,6 +84,6 @@ resource "aws_security_group" "allow_all" {
   }
 
   tags = {
-    uneku = "sg-${terraform.workspace}"
+    uneku = "${var.enviroment}-sg"
   }
 }
