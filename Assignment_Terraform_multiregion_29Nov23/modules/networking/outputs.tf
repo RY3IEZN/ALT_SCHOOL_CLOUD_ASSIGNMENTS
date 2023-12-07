@@ -5,5 +5,5 @@ output "public_subnet" {
 }
 
 output "public_sg" {
-  value = aws_security_group.allow_all.id
+  value = aws_security_group.Webserver-sg.id
 }

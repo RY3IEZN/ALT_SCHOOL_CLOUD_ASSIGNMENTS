@@ -24,7 +24,7 @@ resource "aws_instance" "instance" {
   }
   key_name = aws_key_pair.uneku_key.id
 
-  user_data = file("../userdata.tpl")
+  user_data = var.user_data
 
 
   #   provisioner "local-exec" {

@@ -8,7 +8,7 @@ module "compute" {
   public_sg       = module.networking.public_sg
   user_data       = file("../userdata.tpl")
   enviroment      = "dev"
-  instance_type   = "t2.micro"
+  instance_type   = var.instance_type
 
 }
 

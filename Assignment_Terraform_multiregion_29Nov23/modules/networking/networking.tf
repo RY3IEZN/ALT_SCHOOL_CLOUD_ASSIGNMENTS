@@ -63,16 +63,24 @@ resource "aws_route_table_association" "public_subnet_assoc" {
 
 }
 
-resource "aws_security_group" "allow_all" {
-  name        = "allow_all"
-  description = "Allow all inbound traffic"
+resource "aws_security_group" "Webserver-sg" {
+  name        = "Webserver"
+  description = "sg for frontend webserver"
   vpc_id      = aws_vpc.uneku_vpc.id
 
   ingress {
-    description = "TLS from VPC"
+    description = "react-app"
     from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "NGINX"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "http"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
