@@ -13,20 +13,14 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region     = "eu-west-1"
-  access_key = ""
-  secret_key = ""
+  region = "eu-west-1"
 }
 
 provider "aws" {
-  alias      = "frankfurt"
-  region     = "eu-central-1"
-  access_key = ""
-  secret_key = ""
+  alias  = "frankfurt"
+  region = "eu-central-1"
 }
 provider "aws" {
-  alias      = "london"
-  region     = "eu-west-2"
-  access_key = ""
-  secret_key = ""
+  alias  = "london"
+  region = "eu-west-2"
 }

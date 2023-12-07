@@ -4,12 +4,14 @@ module "networking" {
   source      = "./modules/networking"
   vpc_cidr    = "192.168.0.0/16"
   public_cidr = "192.168.2.0/24"
+  enviroment  = "outside"
 }
 
 module "networking2" {
   source      = "./modules/networking"
   vpc_cidr    = "192.168.0.0/16"
   public_cidr = "192.168.2.0/24"
+  enviroment  = "outside"
   providers = {
     aws = aws.frankfurt
   }
