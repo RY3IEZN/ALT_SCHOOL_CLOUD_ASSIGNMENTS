@@ -114,6 +114,46 @@ The userdata here is to install nginx and display a webpage with the instance ho
 
 Now we can navigate to the EC2 dashboard and select Autoscaling group.
 
+![alt](images/uasg1.png)
+
+Give your asg a name and select the launch template we just created, next
+
+![alt](images/uasg2.png)
+
+Foe the network settings, select our custom vpc and then select only the 2 PRIVATE subnets and then click next
+
+![alt](images/uasg3b.png)
+
+On this next section, we are going to add the autoscaling group to the target group but not yet to the loadbalancer, However select "attach to existing loadbalancer", this will bring out the option which will give you a window to add the asg to target group that we created earlier on.
+
+![alt](images/uasg4a.png)
+
+for now we dont need the vpc lattice but check the box that will allow elb health checks
+
+![alt](images/uasg4b.png)
+
+Now we get into the size and metrics of the asg,
+
+For the group size we want to have atleast 2 running instances. so we set the desired capacity to be 2
+
+![alt](images/uasg5.png)
+
+We want to have a minimum of 2 instances and a max of 3 instances, and also we want a target tracking scaling policy. for the metric we are going to use is as follows
+
+- if Average CPU utilisation is > 90%, then scale out (add another instance)
+
+![alt](images/uasg6.png)
+
+for the instance maintainance policy leave it as "no policy". Once you are done click next, review and then create the asg
+
+![alt](images/uasg7.png)
+
+Once its done. you can check the activity tab and also check and see the instance that was auto created
+
+![alt](images/uasg9.png)
+
+![alt](images/uasg10.png)
+
 # D. Create the loadbalancer
 
 Last but not the least, we can create our loadbalancer after setting up the rest of our infrastructure
