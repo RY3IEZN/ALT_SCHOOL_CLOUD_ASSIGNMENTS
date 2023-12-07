@@ -158,6 +158,57 @@ Once its done. you can check the activity tab and also check and see the instanc
 
 Last but not the least, we can create our loadbalancer after setting up the rest of our infrastructure
 
+On the EC2 console page, select loadbalancer and click "create loadbalancer"
+
+![alt](images/ulb1.png)
+
+select the type of loadbalancer, in this case select application loadbalancer
+
+![alt](images/ulb2.png)
+
+Give your loadbalancer a name and set the scheme to internet facing (as it a public loadbalancer accepting request from over the internet) and IPv4 as the address type
+
+![alt](images/ulb3.png)
+
+For the network settings ensure to select our custom created vpc and select the 2 public subnets also select thr webserver-sg like before that the only rule to allow traffic to port 80
+
+![alt](images/ulb4.png)
+
+next setup the listner and router, to listen to traffic on port 80 with http protocol and let it route traffic to our target group, (the group that has the auto-scaling group in it)
+
+![alt](images/ulb5.png)
+
+Review the configuration then click create
+
+![alt](images/ulb6.png)
+
+The Loadbalancer will take about 7-10mins to create,so be patient
+
+![alt](images/ulb7.png)
+
+Once it created, copy the DNS name and then paste it a browser
+
+![alt](images/ulb8a.png)
+
+Great it works! now keep refreshing and watch as the traffic alternate between both instance
+
+![alt](images/ulb8b.png)
+
+With that we have succefully created a loadbalancer and are routing traffic between our resources in our asg
+
+## Convert loadbalancer dns name to normal DNS name
+
+This step will vary according to your DNS provider but in my case i am using [Namecheap](https://www.namecheap.com/), what you need to do is to add a CNAME record and allow it a few minutes for the record to reflect
+
+![alt](images/namecheap.JPG)
+
+After some minutes visit the newbdns name from your provider. in my case it was [loadbalancer.meetunekue.online]()
+
+![alt](images/ulb9a.png)
+![alt](images/ulb9a.png)
+
+Great. we now have our own custom dns name instead of the aws alb dns name
+
 # E. Simulate Auto-scaling taking action
 
 I knows it been long read, for the last part we are going to test out a simulation of an autoscaling group.
