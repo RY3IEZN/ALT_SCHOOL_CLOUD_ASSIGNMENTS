@@ -66,7 +66,55 @@ At this point we are going to leave it empty and wont register any targets to th
 
 We now have an Empty target group, which we will later add the autoscaling group into the target group
 
-# D.Create the loadbalancer
+# C. Create An Autoscaling group
+
+An Auto Scaling group contains a collection of EC2 instances that are treated as a logical grouping for the purposes of automatic scaling and management
+
+We can now create our compute infrastructure which will hold our webservers.
+
+Navigate to the EC2 dashboard and select Autoscaling group.
+
+## Create launch template
+
+Before we create an auto-scaling group, We need to create a launch template, the launch template is going to be the standard configuration for provisioning instances i.e anytime the autoscaling group is creating a new instance, it will provision and instance according to the specified configuration
+
+Navigate back to the EC2 dashboard and select launch template and click create launch template
+
+![alt](images/ult1.png)
+
+Set a name and description for the template and check the box that sets up guidiance for the template
+
+![alt](images/ult2.png)
+
+for the purpose of this demo, please stick to free-tier resources, Select the Ubuntu OS
+
+![alt](images/ult3.png)
+
+choose the instance size and the key-pair
+
+![alt](images/ult4.png)
+
+For the network settings here are few things we are setting up
+
+- Leave the subnet section as "dont include"(this will be adjusted in the asg steps)
+- Create a new security group(if you dont have one)
+- Give the sg a name a descriptions
+- Select our custom vpc
+- allow a rule that allows http traffic from anywhere (later we can create another sg for the loadbalancer and then adjust it to recieve traffic from only the loadbalancer)
+
+![alt](images/ult5.png)
+
+Scroll down, click on advanced details then scroll down to userdata and input the userdata
+
+![alt](images/ult6a.png)
+
+The userdata here is to install nginx and display a webpage with the instance hostname. Once done click "create launch template"
+
+![alt](images/ult6b.png)
+
+Now we can navigate to the EC2 dashboard and select Autoscaling group.
+
+# D. Create the loadbalancer
 
 Last but not the least, we can create our loadbalancer after setting up the rest of our infrastructure
 
