@@ -7,7 +7,7 @@ resource "aws_key_pair" "uneku_key" {
   public_key = file(var.public_key_path)
 
   tags = {
-    enviroment = "${var.enviroment}_key"
+    uneku = "${var.enviroment}_key"
   }
 }
 
@@ -26,10 +26,7 @@ resource "aws_instance" "instance" {
 
   user_data = var.user_data
 
-
-  #   provisioner "local-exec" {
-  #     command = templatefile("../scp_script.tpl", {
-  #       nodeip = self.public_ip
-  #     })
-  #   }
+  tags = {
+    uneku = "${var.enviroment}_ec2"
+  }
 }
