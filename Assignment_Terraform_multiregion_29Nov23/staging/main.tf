@@ -3,12 +3,12 @@
 module "compute" {
   source          = "../modules/compute"
   public_key_path = "~/.ssh/k3key.pub"
-  volume_size     = 30
+  volume_size     = var.volume_size
   public_subnet   = module.networking.public_subnet
   public_sg       = module.networking.public_sg
   user_data       = file("../userdata.tpl")
   enviroment      = "staging"
-  instance_type   = "t2.micro"
+  instance_type   = var.instance_type
 }
 
 module "networking" {
