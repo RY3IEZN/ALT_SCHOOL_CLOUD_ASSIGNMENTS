@@ -1,3 +1,3 @@
 <!-- @format -->
 
-![alt](aws_holiday_project_t.png)
+![alt](image/aws_holiday_project_t.png)
