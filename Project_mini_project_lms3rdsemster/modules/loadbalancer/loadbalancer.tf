@@ -42,9 +42,10 @@ resource "aws_lb_target_group" "nicks_alb_tg" {
 }
 
 
-# resource "aws_lb_target_group_attachment" "test" {
-#   for_each         = toset(var.instance_id)
-#   target_group_arn = aws_lb_target_group.nicks_alb_tg.arn
-#   target_id        = each.value
-#   port             = 80
-# }
+resource "aws_lb_target_group_attachment" "test" {
+  count            = length(var.instance_id)
+  target_group_arn = aws_lb_target_group.nicks_alb_tg.arn
+  target_id        = var.instance_id[count.index]
+  port             = 80
+
+}
