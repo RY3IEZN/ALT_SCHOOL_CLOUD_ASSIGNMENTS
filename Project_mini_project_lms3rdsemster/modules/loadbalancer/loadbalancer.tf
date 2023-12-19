@@ -1,3 +1,5 @@
+# ---loadbalancer/loadbalancer.tf---
+
 resource "aws_lb" "nicks_alb" {
   name               = "nick123abcalb"
   internal           = false
