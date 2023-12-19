@@ -23,7 +23,8 @@ resource "aws_internet_gateway" "nicks_igw" {
 # create a public subnet
 resource "aws_subnet" "nicks_public_subnet" {
   vpc_id                  = aws_vpc.nicks_vpc.id
-  cidr_block              = var.public_subnet
+  cidr_block              = "192.168.2.0/24"
+  availability_zone       = "eu-west-2a"
   map_public_ip_on_launch = true
 
   tags = {
@@ -34,8 +35,9 @@ resource "aws_subnet" "nicks_public_subnet" {
 # create a public subnet
 resource "aws_subnet" "nicks_public_subnet2" {
   vpc_id                  = aws_vpc.nicks_vpc.id
-  cidr_block              = var.public_subnet2
+  cidr_block              = "192.168.4.0/24"
   map_public_ip_on_launch = true
+  availability_zone       = "eu-west-2b"
 
   tags = {
     nicks = "public_subnet2"
