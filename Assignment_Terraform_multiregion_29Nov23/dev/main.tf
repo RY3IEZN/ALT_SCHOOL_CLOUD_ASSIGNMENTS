@@ -7,7 +7,7 @@ module "compute" {
   public_subnet   = module.networking.public_subnet
   public_sg       = module.networking.public_sg
   user_data       = file("../userdata.tpl")
-  enviroment      = "dev"
+  enviroment      = "devv"
   instance_type   = var.instance_type
 
 }
