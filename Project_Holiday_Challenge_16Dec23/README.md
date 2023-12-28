@@ -12,11 +12,16 @@
 
 ## Prerequisites
 
-Create vpc
-create empty target group
-create autoscaling group, (create launch template 1st, then later add to traget group)
-create loadbalncer
-simulate asg taking action
+- Aws Account
+- willingness to laern
+
+### We would be creating our infrastructure in this order
+
+1. Create vpc
+1. create empty target group
+1. Create autoscaling group, (create launch template 1st, then later add to traget group)
+1. create loadbalncer
+1. simulate asg taking action
 
 # A. Create VPC
 
