@@ -26,12 +26,7 @@ resource "aws_instance" "instance" {
   user_data = var.user_data
 
   provisioner "local-exec" {
-    command = <<EOT
-    echo "[web_servers]" > host-inventory
-    for i in \$(terraform output -json public_ip | jq -r '.value[]'); do
-      echo "\$i ansible_ssh_user=your-ssh-user" >> host-inventory
-    done
-  EOT
+    command = "echo '${self.public_ip} ansible_user=ubuntu' >> inventory"
   }
 
   tags = {
@@ -39,6 +34,8 @@ resource "aws_instance" "instance" {
   }
 }
 
-
-
-
+# resource "null_resource" "name" {
+#   provisioner "local-exec" {
+#     command = ""
+#   }
+# }
