@@ -10,7 +10,6 @@ module "networking" {
 module "compute" {
   source            = "./modules/compute"
   user_data         = file("userdata.tpl")
-  public_key_path   = "~/.ssh/k3key.pub"
   security_group_id = module.networking.security_group_id
   public_subnet_id  = module.networking.public_subnet_id
 }
