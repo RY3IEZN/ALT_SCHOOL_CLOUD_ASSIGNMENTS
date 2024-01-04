@@ -14,7 +14,7 @@
         state: present
 
     - name: Display Hostname on Default Nginx Page
-      shell: "echo '<h1>Welcome to server: $(hostname)</h1>' | sudo tee /usr/share/nginx/html/index.html"
+      shell: echo "<h1>welcome to $(hostname) server</h1>" | sudo tee /var/www/html/index.html
 
     - name: Restart Nginx
       service:

@@ -34,8 +34,11 @@ resource "aws_instance" "instance" {
   }
 }
 
-# resource "null_resource" "name" {
-#   provisioner "local-exec" {
-#     command = ""
-#   }
-# }
+# Run Ansible playbook only once after all instances are created
+resource "null_resource" "ansible_provisioner" {
+  provisioner "local-exec" {
+    command = "ansible -i inventory webserverplaybook.yaml"
+  }
+
+  depends_on = [aws_instance.instance]
+}
