@@ -1,18 +1,18 @@
 # ---route53/route53.tf---
 
-resource "aws_route53_zone" "main" {
-  name = "altSchoolZone"
+resource "aws_route53_zone" "zone" {
+  name = "meetunekue.online"
 }
 
 
-# resource "aws_route53_record" "a" {
-#   zone_id = aws_route53_zone.main.zone_id
-#   name    = "${var.subdomain_host}.${var.route53_zone_dns}"
-#   type = "A"
+resource "aws_route53_record" "loadbalancer_record" {
+  zone_id = aws_route53_zone.zone.zone_id
+  name    = "terraform-test.meetunekue.online"
+  type    = "A"
 
-#   alias {
-#     name                   = aws_lb.altschool-lb.dns_name
-#     zone_id                = aws_lb.altschool-lb.zone_id
-#     evaluate_target_health = true
-#   }
-# }
+  alias {
+    name                   = var.loadbalancer_dns_name
+    zone_id                = var.loadbalancer_zone_id
+    evaluate_target_health = true
+  }
+}
