@@ -24,16 +24,16 @@ resource "aws_instance" "instance" {
   }
 }
 
-resource "time_sleep" "wait_10_seconds" {
-  create_duration = "10s"
-  depends_on      = [aws_instance.instance]
+resource "time_sleep" "wait_30_seconds" {
+  depends_on = [aws_instance.instance]
+
+  create_duration = "30s"
 }
 
-# Run Ansible playbook only once after all instances are created
 resource "null_resource" "ansible_provisioner" {
   provisioner "local-exec" {
-    command = "ansible -i inventory webserverplaybook.yaml"
+    command = " ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i inventory webserverplaybook.yaml"
   }
 
-  depends_on = [time_sleep.wait_10_seconds, aws_instance.instance]
+  depends_on = [time_sleep.wait_30_seconds]
 }
