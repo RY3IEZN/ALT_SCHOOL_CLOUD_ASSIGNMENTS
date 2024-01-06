@@ -43,3 +43,8 @@ Run the following command:
 ```sh
 terraform destroy
 ```
+
+# Ansible
+
+Ensure you have ansible already installed on your host system as we are running a local-exec,
+Also ensure the ssh-key path is set in the `ansible.cfg` file

@@ -1,5 +1,7 @@
 # ---networking/networking.tf---
 
+
+# create a vpc
 resource "aws_vpc" "nicks_vpc" {
   cidr_block = var.vpc_cidr
 
@@ -11,7 +13,7 @@ resource "aws_vpc" "nicks_vpc" {
   }
 }
 
-
+# create an igw
 resource "aws_internet_gateway" "nicks_igw" {
   vpc_id = aws_vpc.nicks_vpc.id
 
@@ -32,7 +34,7 @@ resource "aws_subnet" "nicks_public_subnet" {
   }
 }
 
-# create a public subnet
+# create a public subnet2
 resource "aws_subnet" "nicks_public_subnet2" {
   vpc_id                  = aws_vpc.nicks_vpc.id
   cidr_block              = "192.168.4.0/24"

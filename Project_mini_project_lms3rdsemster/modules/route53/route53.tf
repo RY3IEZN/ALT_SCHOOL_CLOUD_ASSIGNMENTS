@@ -1,14 +1,16 @@
 # ---route53/route53.tf---
 
+# create a hosted zone
 resource "aws_route53_zone" "zone" {
   name = "meetunekue.online"
 }
 
 
+# create a record in the hosted zone
 resource "aws_route53_record" "loadbalancer_record" {
   zone_id = aws_route53_zone.zone.zone_id
   name    = "terraform-test.meetunekue.online"
-  type    = "A"
+  type    = "CNAME"
 
   alias {
     name                   = var.loadbalancer_dns_name

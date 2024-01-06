@@ -1,6 +1,6 @@
 # ---compute/compute.tf---
 
-# create the instance
+# create 3 instances
 resource "aws_instance" "instance" {
   count                  = 3
   ami                    = data.aws_ami.server_ami.id
@@ -24,12 +24,14 @@ resource "aws_instance" "instance" {
   }
 }
 
+# Create a 30s delay in resource creation 
 resource "time_sleep" "wait_30_seconds" {
   depends_on = [aws_instance.instance]
 
   create_duration = "30s"
 }
 
+# create a provisioner to run commands
 resource "null_resource" "ansible_provisioner" {
   provisioner "local-exec" {
     command = " ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i inventory webserverplaybook.yaml"

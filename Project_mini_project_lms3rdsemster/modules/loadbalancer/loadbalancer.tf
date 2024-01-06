@@ -1,5 +1,7 @@
 # ---loadbalancer/loadbalancer.tf---
 
+
+# create a loadbalancer
 resource "aws_lb" "nicks_alb" {
   name               = "nick123abcalb"
   internal           = false
@@ -13,6 +15,7 @@ resource "aws_lb" "nicks_alb" {
   }
 }
 
+# create a listener for the loadbalancer
 resource "aws_lb_listener" "nicks_alb_listner" {
   load_balancer_arn = aws_lb.nicks_alb.arn
   port              = "80"
@@ -24,7 +27,7 @@ resource "aws_lb_listener" "nicks_alb_listner" {
   }
 }
 
-
+# create a target group for the loadbalancer
 resource "aws_lb_target_group" "nicks_alb_tg" {
   name     = "nicksalbtg"
   port     = 80
@@ -43,7 +46,7 @@ resource "aws_lb_target_group" "nicks_alb_tg" {
 
 }
 
-
+# create a tg-attachment-gro i.e attach instances/apps to the target group
 resource "aws_lb_target_group_attachment" "test" {
   count            = length(var.instance_id)
   target_group_arn = aws_lb_target_group.nicks_alb_tg.arn
