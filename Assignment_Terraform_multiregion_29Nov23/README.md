@@ -15,19 +15,19 @@
 1. Initialize Terraform.
 
    ```bash
-   terraform init
+   :~$ terraform init
    ```
 
 1. See what resources will be created.
 
    ```bash
-   terraform plan
+   :~$ terraform plan
    ```
 
 1. Create the resources and deploy the sample.
 
    ```bash
-   terraform apply
+   :~$ terraform apply
    ```
 
    1. If there is a confirmation prompt, type `yes` and hit Enter/Return.
@@ -43,5 +43,5 @@ To avoid incurring charges to your account for the resources used in this applic
 Run the following command:
 
 ```sh
-terraform destroy
+:~$ terraform destroy
 ```
