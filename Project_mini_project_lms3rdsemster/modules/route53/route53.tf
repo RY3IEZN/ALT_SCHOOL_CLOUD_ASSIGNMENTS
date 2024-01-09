@@ -10,7 +10,7 @@ resource "aws_route53_zone" "zone" {
 resource "aws_route53_record" "loadbalancer_record" {
   zone_id = aws_route53_zone.zone.zone_id
   name    = "terraform-test.meetunekue.online"
-  type    = "CNAME"
+  type    = "A"
 
   alias {
     name                   = var.loadbalancer_dns_name
