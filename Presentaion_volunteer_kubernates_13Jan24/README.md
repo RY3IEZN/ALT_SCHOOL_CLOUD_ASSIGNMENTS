@@ -77,73 +77,69 @@ since we have minikube and kubectl we can apply our manifest files using the `ap
 
 NB: make sure you are in the same directory of the manifest file before executing this command
 
-```
+```sh
 :~$ kubectl apply -f caveman.yaml
 ```
 
 or
 
-```
+```sh
 minikube kubectl -- apply -f caveman.yaml
 ```
 
-then you should get a prompt saying
+then you should get a prompt saying it has created it
 
-img
-img
-img
+![alt](/images/kubectl1.JPG)
 
 repeat the same with the service manifest file
 
-```
+```sh
 :~$ kubectl apply -f caveman-service.yaml
 ```
 
 or
 
-```
+```sh
 :~$ minikube kubectl -- apply -f caveman-service.yaml
 ```
 
 then you should get a prompt saying
 
-img
-img
-img
+![alt](/images/kubectl2.JPG)
 
 Once that is done you can check the state of the pods and service ensuring everyhing is running,
 we can use the `get pods` command to check
 
-```
+```sh
 :~$ kubectl get pods
 ```
 
-img
-img
-img
+![alt](/images/kubectl3.JPG)
 
 repeat same for service, and ensure we have type nodePort
 
-```
+```sh
 :~$ kubectl get svc
 ```
 
-img
-img
-img
+![alt](/images/kubectl4.JPG)
 
 Now that all pods are up and the service is up, for a local deployment we will make use of portforwarding, in Production we would actually use `ingress` but for now we will use minikube to port forward our services, so we can use the `kubectl port-forward service/<service-name> <host-port>:<container-port>` command an example below
 
-```
+```sh
 :~$ kubectl port-forward service/caveman-service 3000:3000
 ```
 
 or
 
-```
-:~$ minikube service caeman-service
+```sh
+:~$ minikube service caveman-service
 ```
 
-Open your browser and then visit `localhost:<port>`
+Open your browser and then visit `localhost:<port>` and be greeted into the cave
 
-and we should see our endpoint
+![alt](/images/kubectlq.png)
+
+and we should see our endpoint `/api/v1/pod`
+
+![alt](/images/kubectl5.JPG)
