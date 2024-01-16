@@ -10,10 +10,11 @@
 2. Docker installed
 3. kubectl installed
 4. minikube installed
+5. The guide assumes you are using an linux based OS, preferable ubuntu
 
 For this Kubernates we will be deploying a simple nodejs application a websever that returns the `Pod_id`, for the deployment will be using `minikube`.
 
-before we procced to running the deployment ensure that you have [Docker](https://), [Minikube](https://), [kubectl](https://) installed on the VM, as these are the needed tools to run the deployment.
+before we procced to running the deployment ensure that you have [Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), [Minikube](https://minikube.sigs.k8s.io/docs/start/), [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed on the VM, as these are the needed tools to run the deployment.
 
 After you have these installed, we can create our deployment and service manifest files for the deployment
 
@@ -89,7 +90,7 @@ minikube kubectl -- apply -f caveman.yaml
 
 then you should get a prompt saying it has created it
 
-![alt](/images/kubectl1.JPG)
+![alt](images/kubectl1.JPG)
 
 repeat the same with the service manifest file
 
@@ -105,7 +106,7 @@ or
 
 then you should get a prompt saying
 
-![alt](/images/kubectl2.JPG)
+![alt](images/kubectl2.JPG)
 
 Once that is done you can check the state of the pods and service ensuring everyhing is running,
 we can use the `get pods` command to check
@@ -114,7 +115,7 @@ we can use the `get pods` command to check
 :~$ kubectl get pods
 ```
 
-![alt](/images/kubectl3.JPG)
+![alt](images/kubectl3.JPG)
 
 repeat same for service, and ensure we have type nodePort
 
@@ -122,7 +123,7 @@ repeat same for service, and ensure we have type nodePort
 :~$ kubectl get svc
 ```
 
-![alt](/images/kubectl4.JPG)
+![alt](images/kubectl4.JPG)
 
 Now that all pods are up and the service is up, for a local deployment we will make use of portforwarding, in Production we would actually use `ingress` but for now we will use minikube to port forward our services, so we can use the `kubectl port-forward service/<service-name> <host-port>:<container-port>` command an example below
 
@@ -138,8 +139,8 @@ or
 
 Open your browser and then visit `localhost:<port>` and be greeted into the cave
 
-![alt](/images/kubectlq.png)
+![alt](images/kubectlq.png)
 
 and we should see our endpoint `/api/v1/pod`
 
-![alt](/images/kubectl5.JPG)
+![alt](images/kubectl5.JPG)
