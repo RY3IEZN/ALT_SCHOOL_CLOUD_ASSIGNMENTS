@@ -70,3 +70,80 @@ spec: # The specification of the deployment,including replicas,selectors,templat
 - metadata: this are details of deploymeny such as name,type,labels etc
 - spec: this provides the operations of the deployment, the replicas and other
 - template: the template and spec at this point defines the pod details, the container to run,the port details, the image to use and other env variables and etc that the pod will need to function and communicate
+
+Now that we have a bit of understanding, we can now deploy our manifest to our kubernates cluster and watch our deployments being created
+
+since we have minikube and kubectl we can apply our manifest files using the `apply` command.
+
+NB: make sure you are in the same directory of the manifest file before executing this command
+
+```
+:~$ kubectl apply -f caveman.yaml
+```
+
+or
+
+```
+minikube kubectl -- apply -f caveman.yaml
+```
+
+then you should get a prompt saying
+
+img
+img
+img
+
+repeat the same with the service manifest file
+
+```
+:~$ kubectl apply -f caveman-service.yaml
+```
+
+or
+
+```
+:~$ minikube kubectl -- apply -f caveman-service.yaml
+```
+
+then you should get a prompt saying
+
+img
+img
+img
+
+Once that is done you can check the state of the pods and service ensuring everyhing is running,
+we can use the `get pods` command to check
+
+```
+:~$ kubectl get pods
+```
+
+img
+img
+img
+
+repeat same for service, and ensure we have type nodePort
+
+```
+:~$ kubectl get svc
+```
+
+img
+img
+img
+
+Now that all pods are up and the service is up, for a local deployment we will make use of portforwarding, in Production we would actually use `ingress` but for now we will use minikube to port forward our services, so we can use the `kubectl port-forward service/<service-name> <host-port>:<container-port>` command an example below
+
+```
+:~$ kubectl port-forward service/caveman-service 3000:3000
+```
+
+or
+
+```
+:~$ minikube service caeman-service
+```
+
+Open your browser and then visit `localhost:<port>`
+
+and we should see our endpoint
