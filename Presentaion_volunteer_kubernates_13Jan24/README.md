@@ -14,7 +14,39 @@
 
 For this Kubernates we will be deploying a simple nodejs application a websever that returns the `Pod_id`, for the deployment will be using `minikube`.
 
-before we procced to running the deployment ensure that you have [Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), [Minikube](https://minikube.sigs.k8s.io/docs/start/), [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed on the VM, as these are the needed tools to run the deployment.
+we have our simple nodejs application that is webserver that returns the id of the pod in `app.js`
+
+```js
+app.get("/api/v1/pod", (req, res) => {
+  const podId = process.env.HOSTNAME || os.hostname();
+
+  const response = {
+    location: "pod",
+    "pod-id": podId,
+  };
+
+  res.json(response);
+});
+```
+
+first of all we need to containerise our app and then push it to dockerhub
+
+```sh
+:~$ docker build -t <yourHubUserName>/<image_name>:<tag> .
+```
+
+tag and push to docker hub
+
+```
+# use the "docker images" command to get the image_id of your image
+# replace <yourHubUserName>/<image_name>:tag with # your actual name,tag and id
+
+:~$ docker tag <image_id> <yourHubUserName>/<image_name>:<tag>
+
+:~$ docker push yourHubUserName/<image_name>:<tag>
+```
+
+now we can procced to work on our deployment file before we procced to running the deployment ensure that you have [Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository), [Minikube](https://minikube.sigs.k8s.io/docs/start/), [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/) installed on the VM, as these are the needed tools to run the deployment.
 
 After you have these installed, we can create our deployment and service manifest files for the deployment
 
@@ -51,7 +83,7 @@ kind: Deployment # The kind of manifest file, deployment,services,configMap etc
 metadata: # The details
   name: caveman
 spec: # The specification of the deployment,including replicas,selectors,templates
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: caveman
@@ -62,7 +94,7 @@ spec: # The specification of the deployment,including replicas,selectors,templat
     # the spec below is the spec of the container images with other details like ports,env,limits etc
     spec:
       containers:
-        - name: caveman
+        - name: caveman-home
           image: nickstersz/caveman:1.1 # Docker image from dockerhub or any repository
           ports:
             - containerPort: 3000
