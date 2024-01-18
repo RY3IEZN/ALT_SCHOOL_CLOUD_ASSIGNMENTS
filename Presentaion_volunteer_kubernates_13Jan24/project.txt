@@ -1,0 +1,4 @@
+Project:
+Create a simple nodeJS application and write a deployment manifest to deploy,
+this application on kubernetes. Expose this application using nodePort on ,
+your host machine using minikube.
