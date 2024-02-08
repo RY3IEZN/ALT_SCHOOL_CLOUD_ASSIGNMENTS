@@ -1,3 +1,3 @@
 <!-- @format -->
 
-![alt](/images/Capstone%20Project.png)
+![alt](/images/CapstoneProject.png)
