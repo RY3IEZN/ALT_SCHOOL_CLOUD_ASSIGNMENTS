@@ -2,13 +2,19 @@
 
 # Capstone Project: Sock Shop, A Microservice Demo Application
 
-## Deployment Platforms
+The application serves as the user-facing component of an online store specializing in sock sales. Its primary purpose is to facilitate the demonstration and testing of microservice and cloud-native technologies.
+
+The application is constructed using Spring Boot, Go kit, and Node.js, and it is packaged within Docker containers and deployed on kuberbates cluster in AKS
+
+## Deployment steps
 
 The [install folder](./install/) contains scripts and to install the needed cli tools
 
-The [deploy folder](./deploy/) contains scripts and instructions to provision the application onto your favourite platform.
+The [infrastructure folder](./infrastructure/) contains scripts to provision the infrastructure(aks,acr,VM).
 
-## Visualizing the deployment application
+The [.github folder]() contain the deployment scripts using github actions
+
+## Visualizing the deployment pipeline
 
 ![alt](images/CapstoneProject.png)
 
