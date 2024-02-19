@@ -27,7 +27,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 # https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 
-# install argocd
+# install argocdcli
 curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
 sudo install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
 rm argocd-linux-amd64

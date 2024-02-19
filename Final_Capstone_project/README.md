@@ -8,7 +8,7 @@ The application is constructed using Spring Boot, Go kit, and Node.js, and it is
 
 ## Deployment steps
 
-The [install folder](./install/) contains scripts and to install the needed cli tools
+The [install folder](./install/) contains scripts to install the needed cli tools
 
 The [infrastructure folder](./infrastructure/) contains scripts to provision the infrastructure(aks,acr,VM).
 
