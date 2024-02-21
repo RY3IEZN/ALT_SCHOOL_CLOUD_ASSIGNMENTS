@@ -1,51 +1,22 @@
-# @format
-
-- name: Create Cron Job to Check Server Uptime
-  hosts: 192.168.129.4
-  become: "yes"
-
-  tasks:
-    - name: Create Cron Job
-      cron:
-        name: Check Server Uptime
-        job: /usr/bin/uptime > /var/log/uptime.log
-        minute: 0
-        hour: 0
-      become_user: root
-
-- name: Execute Bash Script and Create Cron Job
-  hosts: 192.168.129.4
-  become: "yes"
-
-  vars:
-    php_app_url: "http://192.168.129.4"
+---
+- name: Configure Timezone, Install Nginx, and Display Hostname
+  hosts: all
+  become: true
 
   tasks:
-    - name: Execute the shell script on the slave node
-      script: /home/vagrant/lamp_stack.sh
-      register: script_output
-      ignore_errors: "yes"
+    - name: Set Timezone to Africa/Lagos
+      timezone:
+        name: Africa/Lagos
 
-    - name: Execute the shell script on the slave node
-      script: /home/vagrant/setup_apache_laravel.sh
-      register: script_output2
-      ignore_errors: "yes"
+    - name: Install Nginx
+      package:
+        name: nginx
+        state: present
 
-    - name: Verify PHP Application Accessibility
-      uri:
-        url: "{{ php_app_url }}"
-        status_code: 200
-      ignore_errors: "yes"
-      register: php_app_check
+    - name: Display Hostname on Default Nginx Page
+      shell: "echo '<h1>Welcome to $(hostname) server</h1>' | sudo tee /usr/share/nginx/html/index.html"
 
-    - name: Print PHP Application Check
-      debug:
-        var: php_app_check
-
-    - name: Print PHP Application Check
-      debug:
-        var: script_output
-
-    - name: Print PHP Application Check
-      debug:
-        var: script_output2
+    - name: Restart Nginx
+      service:
+        name: nginx
+        state: restarted
