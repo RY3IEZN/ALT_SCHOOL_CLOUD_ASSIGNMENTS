@@ -1,3 +1,4 @@
+# ---aks/aks.tf---
 
 resource "azurerm_kubernetes_cluster" "capstone_k8s" {
   name                = "uneku-capstone-k8s"

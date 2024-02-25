@@ -1,3 +1,5 @@
+# ---acr/acr.tf---
+
 resource "azurerm_resource_group" "capstone" {
   name     = "capstone"
   location = "uk south"

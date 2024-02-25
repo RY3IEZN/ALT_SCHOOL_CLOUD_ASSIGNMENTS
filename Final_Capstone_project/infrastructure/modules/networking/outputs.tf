@@ -1,3 +1,5 @@
+# ---networking/outputs.tf---
+
 output "capstone_subnet_id" {
   value = azurerm_subnet.capstone_subnet.id
 }

@@ -1,3 +1,4 @@
+# ---networking/networking.tf---
 
 resource "azurerm_virtual_network" "capstone_network" {
   name                = "capstone-network"

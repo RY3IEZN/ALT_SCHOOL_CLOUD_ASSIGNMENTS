@@ -1,3 +1,5 @@
+# ---root/provider.tf---
+
 terraform {
   required_providers {
     azurerm = {
@@ -10,3 +12,4 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
