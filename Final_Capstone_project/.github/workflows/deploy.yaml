@@ -1,0 +1,91 @@
+name: capstone_pipeline
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # clone the repo
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # install kubectl
+    - name: Install kubectl
+      uses: azure/setup-kubectl@v2.0
+      with:
+        version: 'v1.24.0'
+      id: install
+
+    # login into awscli
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: eu-west-2
+
+    # install terraform
+    - name: install terraform cli
+      uses: hashicorp/setup-terraform@v3
+
+    # # tf init
+    - name: Terraform Init
+      run: |
+        cd infrastructure/eks
+        terraform init
+
+    # # tf plan
+    - name: Terraform Plan
+      id: plan
+      run: |
+        cd infrastructure/eks
+        terraform plan -no-color
+
+    # tf apply
+    - name: Terraform apply
+      id: apply
+      run: |
+        cd infrastructure/eks
+        terraform apply --auto-approve -no-color
+
+    # # update kubeconfig 
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name capstoneeks
+
+    
+    # # deploy sock-shop manifest file
+    - name: Deploy to EKS
+      run: |
+        cd src
+        kubectl apply -f sockshop.yaml
+
+    
+    # # Install ArgoCD CLI
+    # - name: Install ArgoCD CLI
+    #   run: |
+    #     curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
+    #     chmod +x /usr/local/bin/argocd
+
+    # # Install ArgoCD
+    # - name: Install ArgoCD
+    #   run: |
+        # kubectl create namespace argocd
+        # kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+
+    # # # Deploy with ArgoCD
+    # # - name: Deploy with ArgoCD
+    # #   run: |
+    # #     argocd login <ARGOCD_SERVER> --insecure --username <ARGOCD_USERNAME> --password <ARGOCD_PASSWORD>
+    # #     argocd app create myapp --repo https://github.com/your/repo.git --path /path/to/manifests --dest-server https://kubernetes.default.svc --dest-namespace default
+    # #     argocd app sync myapp
+
+
+# update the kubeconfig
+# az aks get-credentials --resource-group capstone_rg --name uneku-capstone-k8s --overwrite-existing

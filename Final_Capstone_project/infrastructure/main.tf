@@ -10,7 +10,7 @@ module "acr" {
   source      = "./modules/acr"
   rg_name     = "capstone_rg"
   rg_location = "UK South"
-
+  depends_on  = [module.resource_group]
 }
 
 module "networking" {

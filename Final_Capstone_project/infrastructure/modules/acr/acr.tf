@@ -1,10 +1,5 @@
 # ---acr/acr.tf---
 
-resource "azurerm_resource_group" "capstone" {
-  name     = "capstone"
-  location = "uk south"
-}
-
 resource "azurerm_container_registry" "capstone_acr" {
   name                = "unekuscapstonesregistry"
   resource_group_name = var.rg_name
