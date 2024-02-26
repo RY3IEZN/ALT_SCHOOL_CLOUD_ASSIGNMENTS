@@ -5,6 +5,11 @@ on:
     branches:
       - master
 
+permissions:
+      id-token: write
+      contents: read
+
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -15,6 +20,21 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+  
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az account show
+
+
     # install kubectl
     - name: Install kubectl
       uses: azure/setup-kubectl@v2.0
@@ -22,48 +42,48 @@ jobs:
         version: 'v1.24.0'
       id: install
 
-    # login into awscli
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: eu-west-2
+    # # login into awscli
+    # - name: Configure AWS Credentials
+    #   uses: aws-actions/configure-aws-credentials@v1
+    #   with:
+    #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+    #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    #     aws-region: eu-west-2
 
     # install terraform
     - name: install terraform cli
       uses: hashicorp/setup-terraform@v3
 
-    # # tf init
+    # tf init
     - name: Terraform Init
       run: |
-        cd infrastructure/eks
+        cd infrastructure/aks
         terraform init
 
-    # # tf plan
+    # tf plan
     - name: Terraform Plan
       id: plan
       run: |
-        cd infrastructure/eks
+        cd infrastructure/aks
         terraform plan -no-color
 
-    # tf apply
-    - name: Terraform apply
-      id: apply
-      run: |
-        cd infrastructure/eks
-        terraform apply --auto-approve -no-color
+    # # tf apply
+    # - name: Terraform apply
+    #   id: apply
+    #   run: |
+    #     cd infrastructure/aks
+    #     terraform apply --auto-approve -no-color
 
-    # # update kubeconfig 
-    - name: Update kube config
-      run: aws eks update-kubeconfig --name capstoneeks
+    # # # update kubeconfig 
+    # - name: Update kube config
+    #   run: aws aks update-kubeconfig --name capstoneeks
 
     
-    # # deploy sock-shop manifest file
-    - name: Deploy to EKS
-      run: |
-        cd src
-        kubectl apply -f sockshop.yaml
+    # # # deploy sock-shop manifest file
+    # - name: Deploy to EKS
+    #   run: |
+    #     cd src
+    #     kubectl apply -f sockshop.yaml
 
     
     # # Install ArgoCD CLI
