@@ -1,13 +1,19 @@
 #! /bin/bash
 
+# ---------------------------- #
+# Prometheus
+# ---------------------------- #
+
 # add prometheus to the helm repo
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
 
 # update helm repo
 helm repo update
 
 # install prometheus using helm
 helm install prometheus prometheus-community/prometheus
+
 
 # expose prometheus server by exposing the nodeport
 # uncomment this line below ⬇
@@ -18,6 +24,10 @@ helm install prometheus prometheus-community/prometheus
 # kubectl port forward 
 
 
+# ---------------------------- #
+# Grafana
+# ---------------------------- #
+
 # add grafana to the helm repo
 helm repo add grafana https://grafana.github.io/helm-charts
 
@@ -26,7 +36,7 @@ helm repo update
 
 
 # install grafana using helm
-helm install grafana stable/grafana
+helm install grafana grafana/grafana
 
 # expose prometheus server by exposing the nodeport
 # uncomment this line below ⬇
