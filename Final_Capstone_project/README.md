@@ -20,8 +20,8 @@ The [logging]() contains the manifest file for logging
 
 ## Visualizing the deployment pipeline
 
-![alt](images/CapstoneProject.png)
+![alt](images/capstonepipeline.png)
 
 ## Screenshot of application deployed
 
-![Sock Shop frontend](https://github.com/microservices-demo/microservices-demo.github.io/raw/master/assets/sockshop-frontend.png)
+![alt](images/CapstoneProject.png)
