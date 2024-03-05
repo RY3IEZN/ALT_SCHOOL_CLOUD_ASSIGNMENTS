@@ -51,38 +51,39 @@ jobs:
     # tf init
     - name: Terraform Init
       run: |
-        cd infrastructure/aks
+        cd infrastructure
         terraform init
 
     # tf plan
     - name: Terraform Plan
       id: plan
       run: |
-        cd infrastructure/aks
+        cd infrastructure
         terraform plan -no-color
 
     # tf apply
     - name: Terraform apply
       id: apply
       run: |
-        cd infrastructure/aks
+        cd infrastructure
         terraform apply --auto-approve -no-color
 
     # update the kubeconfig
     - name: update-kubeconfig
       run: az aks get-credentials --resource-group capstone_rg --name uneku-capstone-k8s --overwrite-existing
 
-    # # # deploy sock-shop manifest file
-    # - name: Deploy to EKS
-    #   run: |
-    #     cd src
-    #     kubectl apply -f sockshop.yaml
+    # deploy sock-shop manifest file
+    - name: Deploy to Aks
+      run: |
+        cd src
+        kubectl apply -f sockshop.yaml
+        kubectl apply -f ingress.yaml
     
-    # # create ArgoCD cluster
-    # - name: Install ArgoCD
-    #   run: |
-        # kubectl create namespace argocd
-        # kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+    # create ArgoCD cluster
+    - name: Install ArgoCD
+      run: |
+        kubectl create namespace argocd
+        kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 
     # - name: Setup ArgoCD CLI 
