@@ -1,3 +1,3 @@
 <!-- @format -->
 
-The [manifest-logging]() contains the manifest file for logging
+The [logging]() contains the manifest file for logging

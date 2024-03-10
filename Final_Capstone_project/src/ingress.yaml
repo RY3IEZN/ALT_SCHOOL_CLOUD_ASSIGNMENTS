@@ -16,3 +16,7 @@ spec:
                 port:
                   number: 80
             path: /
+tls:
+  - hosts:
+    - finalproject.meetunekue.online
+    secretName: capstone-tls
