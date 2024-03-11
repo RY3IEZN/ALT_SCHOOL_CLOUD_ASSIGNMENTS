@@ -6,6 +6,10 @@ The application serves as the user-facing component of an online store specializ
 
 The application is constructed using Spring Boot, Go kit, and Node.js, and it is packaged within Docker containers and deployed on kubernetes cluster in AKS
 
+## Visualizing the deployment pipeline
+
+![alt](images/capstonepipeline.png)
+
 ## Deployment steps
 
 The [install folder](./install/) contains scripts to install the needed cli tools
@@ -17,10 +21,6 @@ The [.github folder]() contain the deployment scripts using github actions
 The [monitoring]() contains the manifest file for monitoring, also see readme
 
 The [logging]() contains the manifest file for logging
-
-## Visualizing the deployment pipeline
-
-![alt](images/capstonepipeline.png)
 
 ## Screenshot of application deployed
 
