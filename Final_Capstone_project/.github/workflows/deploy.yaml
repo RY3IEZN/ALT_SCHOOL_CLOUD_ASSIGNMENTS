@@ -78,7 +78,7 @@ jobs:
         cd src
         kubectl apply -f sockshop.yaml
     
-    # create ArgoCD cluster
+    # create ArgoCD 
     - name: Install ArgoCD
       run: |
         kubectl create namespace argocd
@@ -93,6 +93,6 @@ jobs:
     # # # Deploy with ArgoCD
     # # - name: Deploy with ArgoCD
     # #   run: |
-    # #     argocd login <ARGOCD_SERVER> --insecure --username <ARGOCD_USERNAME> --password <ARGOCD_PASSWORD>
+    # #     argocd login <ARGOCD_SERVER> --username <ARGOCD_USERNAME> --password <ARGOCD_PASSWORD>
     # #     argocd app create myapp --repo https://github.com/your/repo.git --path /path/to/manifests --dest-server https://kubernetes.default.svc --dest-namespace default
     # #     argocd app sync myapp
